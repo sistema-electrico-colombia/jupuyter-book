@@ -495,6 +495,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-la-informacion">12.2. Transformación de la información</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-la-informacion">12.3. Carga de la información</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning">12.4. Conclusiones de Machine Learning</a></li>
 </ul>
             </nav>
         </div>
@@ -513,7 +514,7 @@ document.write(`
 <section id="extraccion-de-la-informacion-api-rest-xm-sa-esp">
 <h3><span class="section-number">12.1.1. </span>Extracción de la información API REST XM SA ESP<a class="headerlink" href="#extraccion-de-la-informacion-api-rest-xm-sa-esp" title="Link to this heading">#</a></h3>
 <p>Descargar información desde una API REST implica obtener datos de un servicio web que utiliza la arquitectura REST (Representational State Transfer). Este proceso se realiza mediante solicitudes HTTP a los recursos proporcionados por la API, los cuales devuelven datos en formatos legibles por máquina, como JSON o XML.</p>
-<p>En nuestro proyecto, utilizamos una API REST expuesta por la compañía de energía XM S.A. E.S.P., una empresa dedicada a la administración del mercado de energía mayorista y al desarrollo de soluciones y servicios de energía e información. Gracias a esta API, pudimos acceder a información detallada sobre el sistema eléctrico colombiano desde el año 2010 hasta abril de 2024.</p>
+<p>En nuestro proyecto, utilizamos una API REST expuesta por la compañía de energía XM S.A. E.S.P., una empresa dedicada a la administración del mercado de energía mayorista y al desarrollo de soluciones y servicios de energía e información. Gracias a esta API, pudimos acceder a información detallada sobre el sistema eléctrico colombiano desde el año 2010 hasta abril de 2024, logrando extraer de la API 2.2 GB en 33 archivos JSON.</p>
 <p>A continuación escribimos los pasos para desarrollar este procedimiento.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    1. Obtener la documentación del API
     2. Configurar la autenticación y autorización
@@ -580,6 +581,17 @@ El modelo predictivo desarrollado tiene una aplicación práctica significativa,
 <li><p>Mejora Continua del Modelo.
 El proceso de machine learning es iterativo, y aunque los resultados obtenidos son prometedores, existe la posibilidad de mejorar continuamente el modelo mediante la incorporación de nuevos datos y el ajuste de técnicas avanzadas de machine learning.</p></li>
 </ol>
+</section>
+<section id="conclusiones-de-machine-learning">
+<h2><span class="section-number">12.4. </span>Conclusiones de Machine Learning<a class="headerlink" href="#conclusiones-de-machine-learning" title="Link to this heading">#</a></h2>
+<p><img alt="image.png" src="../../_images/output.png" /></p>
+<p>A partir de este gráfico, podemos concluir que las variables que más influyen en la variabilidad del precio son, en orden ascendente:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">volumen_util_energia_sistema_daily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generacion_sistema_daily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disponibilidad_real_daily</span></code></p></li>
+</ol>
+<p>Inicialmente, se esperaba que el <code class="docutils literal notranslate"><span class="pre">consumo_combustible_daily</span></code> fuera la variable que más impactara en el precio. Sin embargo, debido a que la matriz energética colombiana depende en un 70% de la generación hidráulica, el volumen útil de los embalses se convierte en la variable que más influye en los precios.</p>
 </section>
 </section>
 
@@ -654,6 +666,7 @@ El proceso de machine learning es iterativo, y aunque los resultados obtenidos s
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-la-informacion">12.2. Transformación de la información</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-la-informacion">12.3. Carga de la información</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning">12.4. Conclusiones de Machine Learning</a></li>
 </ul>
   </nav></div>
 

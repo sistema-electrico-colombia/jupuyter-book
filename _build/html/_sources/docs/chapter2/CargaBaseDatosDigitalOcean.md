@@ -3,7 +3,7 @@
 ## Realizamos la carga de la base de datos en la nube DigitalOcean
 
 
-En el proceso de migración y carga de datos a la nube de DigitalOcean, hemos aprovechado las ventajas de utilizar Prefect, una herramienta de orquestación de flujos de trabajo de código abierto.
+Con el objetivo de facilitar la consulta de datos crudos, se han cargado todos los jsons a una base de datos crudos a la nube de DigitalOcean, hemos aprovechado las ventajas de utilizar Prefect, una herramienta de orquestación de flujos de trabajo de código abierto.
 
 Gracias a Prefect, pudimos automatizar y gestionar de manera eficiente el flujo de datos desde nuestras bases de datos locales hasta la nube, asegurando la integridad, disponibilidad y confidencialidad de la información en todo momento. Además, su interfaz gráfica nos permitió visualizar y monitorear el progreso de la migración en tiempo real.
 

@@ -500,6 +500,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-del-modelo">9.4. Metricas del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-constribucion">9.5. Analísis de Constribución</a></li>
 </ul>
             </nav>
         </div>
@@ -513,8 +514,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-supervisado">
 <h1><span class="section-number">9. </span>Machine Learning Supervisado<a class="headerlink" href="#machine-learning-supervisado" title="Link to this heading">#</a></h1>
-<p>A continuacion se presenta el plan para la ejecución del presente proyecto:</p>
 <ol class="arabic simple">
+<li><p><strong>Objetivo</strong>: El objetivo de la construcción de este modelo es predecir el precio de bolsa nacional con las variables de operación del sistema.</p></li>
 <li><p><strong>Caracterización de los datos</strong></p></li>
 </ol>
 <ul class="simple">
@@ -522,13 +523,13 @@ document.write(`
 <li><p>Verificación de los tipos de dato.</p></li>
 <li><p>Verificación de las unidades de medida de cada <em>feature</em>.</p></li>
 </ul>
-<ol class="arabic simple" start="2">
+<ol class="arabic simple" start="3">
 <li><p><strong>Preparación de los datos</strong></p></li>
 </ol>
 <ul class="simple">
 <li><p>Selección de características</p></li>
 </ul>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="4">
 <li><p><strong>Modelamiento</strong></p></li>
 </ol>
 <ul class="simple">
@@ -542,7 +543,7 @@ document.write(`
 </li>
 <li><p>Enfoque Multivariable</p></li>
 </ul>
-<ol class="arabic simple" start="4">
+<ol class="arabic simple" start="5">
 <li><p><strong>Evaluación</strong></p></li>
 </ol>
 <ul class="simple">
@@ -1051,7 +1052,7 @@ Name: Date, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x339e23f90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x31e574390&gt;
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/7b8b6632a392a4f5dd24adfb942c3b49ed2e17c769cb1d5b772ead8d1ffc3cb8.png"><img alt="../../_images/7b8b6632a392a4f5dd24adfb942c3b49ed2e17c769cb1d5b772ead8d1ffc3cb8.png" src="../../_images/7b8b6632a392a4f5dd24adfb942c3b49ed2e17c769cb1d5b772ead8d1ffc3cb8.png" style="width: 1288px; height: 258px;" /></a>
@@ -1074,7 +1075,7 @@ Name: Date, dtype: object
 
 <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df_power_co</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
   <span class="k">if</span> <span class="n">column</span><span class="o">!=</span><span class="s2">&quot;precio_bolsa_sistema_daily&quot;</span><span class="p">:</span>
-    <span class="n">df_power_co</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler_multi</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_ts_multivar</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">df_power_co</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler_multi</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_power_co</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="n">df_power_co</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;precio_bolsa_sistema_daily&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rot</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mf">13.5</span><span class="p">)</span>
 </pre></div>
@@ -1189,6 +1190,10 @@ R^2: 0.9215762458969964
 <a class="reference internal image-reference" href="../../_images/9576094034eb1622d24e128cac3f27f72a77307741ddfb6c508186f9d9f5d86c.png"><img alt="../../_images/9576094034eb1622d24e128cac3f27f72a77307741ddfb6c508186f9d9f5d86c.png" src="../../_images/9576094034eb1622d24e128cac3f27f72a77307741ddfb6c508186f9d9f5d86c.png" style="width: 662px; height: 659px;" /></a>
 </div>
 </div>
+</section>
+<section id="analisis-de-constribucion">
+<h2><span class="section-number">9.5. </span>Analísis de Constribución<a class="headerlink" href="#analisis-de-constribucion" title="Link to this heading">#</a></h2>
+<p>Aprovechando las buenas metricas del modelo, podemos construir un grafico de contribución, para determninar cuales son las variables que mas incluyen en los cambios que sufre el precio. Para ello usaremos la funcion <code class="docutils literal notranslate"><span class="pre">plot_importance</span></code> que trae el paquete <code class="docutils literal notranslate"><span class="pre">xgboost</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean Squared Error:&quot;</span><span class="p">,</span> <span class="n">mse</span><span class="p">)</span>
@@ -1205,7 +1210,32 @@ R^2: 0.9215762458969964
 </div>
 </div>
 </div>
-<p>Las metricas del modelo indican que se construyó un buen modelo de machine Learning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficar la Importancia de las Características</span>
+
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">plot_importance</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plot_importance</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="n">importance_type</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">max_num_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Importancia de las Características&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1050x840 with 0 Axes&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/b8c01f8dab6922b68fa7203c2760b80605d3d5c0f68dd06177a46fb83f0e350c.png"><img alt="../../_images/b8c01f8dab6922b68fa7203c2760b80605d3d5c0f68dd06177a46fb83f0e350c.png" src="../../_images/b8c01f8dab6922b68fa7203c2760b80605d3d5c0f68dd06177a46fb83f0e350c.png" style="width: 1048px; height: 659px;" /></a>
+</div>
+</div>
+<p>A partir de este gráfico, podemos concluir que las variables que más influyen en la variabilidad del precio son, en orden ascendente:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">volumen_util_energia_sistema_daily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generacion_sistema_daily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disponibilidad_real_daily</span></code></p></li>
+</ol>
+<p>Inicialmente, se esperaba que el <code class="docutils literal notranslate"><span class="pre">consumo_combustible_daily</span></code> fuera la variable que más impactara en el precio. Sin embargo, debido a que la matriz energética colombiana depende en un 70% de la generación hidráulica, el volumen útil de los embalses se convierte en la variable que más influye en los precios.</p>
 </section>
 </section>
 
@@ -1285,6 +1315,7 @@ R^2: 0.9215762458969964
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-del-modelo">9.4. Metricas del Modelo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-constribucion">9.5. Analísis de Constribución</a></li>
 </ul>
   </nav></div>
 

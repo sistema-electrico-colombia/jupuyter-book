@@ -550,6 +550,7 @@ document.write(`
 <h1><span class="section-number">4. </span>Extracción de datos de la REST API de XM S.A. E.S.P.<a class="headerlink" href="#extraccion-de-datos-de-la-rest-api-de-xm-s-a-e-s-p" title="Link to this heading">#</a></h1>
 <p>En 2020, XM S.A. E.S.P. puso a disposición del público su API REST para facilitar la consulta de datos del Sistema Eléctrico Colombiano. Para simplificar aún más el uso de la API, desarrollaron un módulo llamado <em><a class="reference external" href="http://pydataxm.py">pydataxm.py</a></em>, que permite realizar consultas a la API de manera más directa y sencilla, devolviendo un <em>DataFrame</em> de Pandas con los datos de cada variable consultada.</p>
 <p>Utilizaremos esta API REST para extraer los datos necesarios para nuestro análisis.</p>
+<p>Con este notebook logramos extraer de la API 2.2 GB en 33 archivos JSON.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>

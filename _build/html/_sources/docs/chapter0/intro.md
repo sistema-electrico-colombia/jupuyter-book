@@ -1,18 +1,13 @@
-#  Presentación
+#  Análisis y Modelado Sistema Eléctrico Colombiano en el Periodo de 2010-2024
 
 ```{index} Título
 ```
-
+### **Objetivo**
+------
 Comprender el comportamiento general del precio y la demanda del sistema interconectado nacional.
 Determinar la correlacion del precio y la demanda y otras variables del sistema de generación eléctrica.
 Comprender la influencia de los fenomenos climáticos en el precio y la demanda del SIN.
 Encontrar la influencia del consumo de combustible en el precio de la eléctricidad. 
-
-
-### **Título**
-------
-
-Análisis y Modelado de los datos del Sistema Eléctrico Colombiano para comprender el comportamiento del precio y la demanda desde el año 2015.
 
 
 ### **Integrantes**
@@ -25,6 +20,16 @@ Juan Felipe Sepulveda Mantilla
 Julian Obando Scarpetta
 
 Luz Edilsa Ortiz López
+
+### **Repositorios**
+----
+
+Todos los repositorios de este trabajo son publicos y se encuentran en el siguiente link:
+https://github.com/orgs/sistema-electrico-colombia/repositories
+
+
+El dashboard de este proyecto se encuentra en este link: https://electrico-colombia.streamlit.app
+
 
 ### **Pregunta de investigación**
 ------

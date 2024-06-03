@@ -495,12 +495,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario">2.3. Glosario</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial">2.4. El suministro de energía como factor crítico en la industria pesada: optimización mediante Inteligencia Artificial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-aplica-la-ia-para-la-optimizacion-energetica">2.4.1. ¿Cómo se aplica la IA para la optimización energética?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">2.4.2. Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">2.5. Incorporación de conocimiento humano en sensores virtuales para la industria pesada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-fugas">2.6. Detección de fugas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digitalizacion-de-documentos-de-ingenieria">2.7. Digitalización de Documentos de Ingeniería</a></li>
 </ul>
             </nav>
         </div>
@@ -642,30 +638,6 @@ document.write(`
 <p>Ese tipo de datos es el flujo de energía dentro de la planta, que en palabras simples representa cómo las unidades de proceso intercambian energía entre ellas y el medio ambiente. Por ejemplo, en la simulación de un proceso de limpieza de CO2 y H2S de gas natural, tiene varias unidades de proceso (máquinas) que intercambian materiales y energía entre ellas mediante tuberías para eliminar CO2 y H2S del gas natural crudo. En este proceso es necesario consumir calor para el rehervidor del regenerador y electricidad o aire comprimido para las bombas y la instrumentación.
 Por lo tanto, con los flujos de energía del proceso y los datos históricos, es posible entrenar una red neuronal profunda para encontrar puntos de optimización, patrones de flujo de energía u optimizar los parámetros del proceso para reducir el uso de energía sin comprometer la productividad del proceso.</p>
 </section>
-<section id="determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">
-<h3><span class="section-number">2.4.2. </span>Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales<a class="headerlink" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales" title="Link to this heading">#</a></h3>
-<p>Todo proceso industrial pesado debe monitorear todos sus parámetros como temperatura, presión, flujo volumétrico, concentración, etc. Para algunos casos, como las refinerías de petróleo, es muy fácil calcular estos parámetros sin medir. Sin embargo, en la mayoría de los casos, esto no es una tarea fácil. En industrias como la biotecnológica-farmacéutica, la alimentaria, la siderúrgica, la del plástico y muchas otras, es muy difícil crear modelos fisicoquímicos capaces de calcular los parámetros del proceso. Por ello, las técnicas de Inteligencia Artificial y Deep Learning vienen a hacer eso, estimar parámetros de proceso en base a datos históricos funcionando como sensores virtuales .</p>
-<p>Para los operadores e ingenieros, poder conocer un parámetro sin una medición real es muy poderoso, pueden trabajar con confianza cuando falla un sensor físico o pueden realizar una medición virtual cuando no hay un sensor físico presente.</p>
-</section>
-</section>
-<section id="incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">
-<h2><span class="section-number">2.5. </span>Incorporación de conocimiento humano en sensores virtuales para la industria pesada<a class="headerlink" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada" title="Link to this heading">#</a></h2>
-<p>La creación de sensores virtuales en la industria pesada requiere del entrenamiento de modelos con todas las variables operativas relevantes. Sin embargo, este enfoque puede ir más allá al incorporar conocimiento humano adicional, como la experiencia específica de los operadores y su conocimiento tácito durante el proceso.</p>
-<p>La integración de estas características humanas en los modelos de sensores virtuales ofrece diversos beneficios. En primer lugar, permite una mejor comprensión del proceso, ya que no solo se limita a datos cuantitativos sino que también incorpora el conocimiento tácito y la intuición de los expertos.</p>
-<p>En segundo lugar, facilita el relevo generacional en la industria, especialmente en procesos complejos como la fabricación de cemento, la refinación de petróleo o la producción a gran escala. Al capturar y preservar el conocimiento de los operadores experimentados, se asegura la continuidad del conocimiento y la experiencia en el tiempo, incluso cuando los expertos se retiran.</p>
-<p>En resumen, la incorporación de conocimiento humano en los sensores virtuales representa un avance significativo en la industria pesada. Permite una mejor comprensión de los procesos, facilita el relevo generacional y, en última instancia, contribuye a mejorar la eficiencia, la seguridad y la calidad de la producción.</p>
-</section>
-<section id="deteccion-de-fugas">
-<h2><span class="section-number">2.6. </span>Detección de fugas<a class="headerlink" href="#deteccion-de-fugas" title="Link to this heading">#</a></h2>
-<p>Los derrames son un problema común que puede ocurrir en cualquier industria que procese líquidos. Si la planta es muy grande, hay varios lugares donde no hay supervisión humana. Aquí es donde los modelos de aprendizaje profundo de visión por computadora pueden ayudar a la industria. Por lo tanto, instalar cámaras no supervisadas es una inversión relativamente barata, conectarlas a un sistema mediante un algoritmo de aprendizaje profundo entrenado para detectar fugas de líquido y enviar una alarma, es aún más fácil.</p>
-<p>Sin embargo, la parte difícil es tener un conjunto de datos muy bueno para entrenar la red neuronal profunda. Una de las razones es que es obligatorio tener imágenes del líquido real que procesa la empresa. Empresas como <a class="reference external" href="http://Landing.AI">Landing.AI</a> están trabajando para superar estas dificultades y ofrecer buenos modelos a la industria.</p>
-</section>
-<section id="digitalizacion-de-documentos-de-ingenieria">
-<h2><span class="section-number">2.7. </span>Digitalización de Documentos de Ingeniería<a class="headerlink" href="#digitalizacion-de-documentos-de-ingenieria" title="Link to this heading">#</a></h2>
-<p>Antes de su construcción, toda planta de proceso de industria pesada debe ejecutar todo el proceso de ingeniería, que consta de tres pasos globales, ingeniería Conceptual, ingeniería básica e ingeniería de detalle. Durante estos pasos, los ingenieros generan muchos documentos como diagramas, listas de equipos, listas de instrumentación, dibujos y muchos otros. Estos documentos son obligatorios para tener toda la información necesaria para construir las instalaciones diseñadas por el contratista constructor.</p>
-<p>En ocasiones es necesario realizar cambios o mejoras a una planta que ya está en funcionamiento, y generalmente los documentos no están completos o incluso no digitalizados, este tipo de proyectos se denominan proyectos Brownfield. Entonces, las empresas de industrias pesadas contratan una empresa de ingeniería para digitalizar los documentos, luego la empresa de ingeniería contrata a muchos ingenieros jóvenes para realizar la tarea manualmente, gastando mucho dinero y tiempo en una tarea que se puede realizar utilizando visión por computadora. Puede parecer trivial, pero una herramienta para optimizar estas tareas es muy valiosa en las empresas de ingeniería.</p>
-<p>Por ello, existen empresas que ofrecen herramientas para digitalizar diagramas de procesos e instrumentación (P&amp;ID) utilizando visión por computadora con modelos de aprendizaje profundo muy bien entrenados y sintonizados para detectar símbolos y texto, los datos ya extraídos podrían exportarse a PDF o CSV para ser procesados ​​en otros software.</p>
-<p>Estos son algunos ejemplos de cómo se podría utilizar la IA para mejorar las operaciones industriales pesadas. Para que pueda tener una comprensión más amplia de los usos en el mundo real de esta increíble tecnología.</p>
 </section>
 </section>
 
@@ -738,12 +710,8 @@ Por lo tanto, con los flujos de energía del proceso y los datos históricos, es
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario">2.3. Glosario</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial">2.4. El suministro de energía como factor crítico en la industria pesada: optimización mediante Inteligencia Artificial</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-aplica-la-ia-para-la-optimizacion-energetica">2.4.1. ¿Cómo se aplica la IA para la optimización energética?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">2.4.2. Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">2.5. Incorporación de conocimiento humano en sensores virtuales para la industria pesada</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-fugas">2.6. Detección de fugas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digitalizacion-de-documentos-de-ingenieria">2.7. Digitalización de Documentos de Ingeniería</a></li>
 </ul>
   </nav></div>
 
