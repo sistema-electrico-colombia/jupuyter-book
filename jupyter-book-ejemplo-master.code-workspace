@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "jupyter-book-ejemplo-master",
+			"path": "../jupyter-book-ejemplo-master"
+		},
+		{
+			"name": "Contexto",
+			"path": "../../Documents/Maestria/Clases/Bigdata/Trabajos/Notebook/book/Contexto"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "jupyter-book-ejemplo-master"
+	}
+}

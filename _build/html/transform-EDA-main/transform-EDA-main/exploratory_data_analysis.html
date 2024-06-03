@@ -1,0 +1,2371 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analisis Exploratorio de Datos &#8212; Presentación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=7f8ff830"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'transform-EDA-main/transform-EDA-main/exploratory_data_analysis';</script>
+    <link rel="canonical" href="https://publiconsulting.com/transform-EDA-main/transform-EDA-main/exploratory_data_analysis.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../docs/chapter0/root.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Presentación - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Presentación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inicio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter0/Inicio.html">1. Presentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter1/Contexto.html">2. Contexto</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Flujo de trabajo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/DiagramaProcesoETL.html">3. Detalle del procedimiento Extracción - Transformación - Carga (ETL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/extraccion_datos_api_xm.html">4. Extracción de datos de la REST API de XM S.A. E.S.P.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/CargaBaseDatosDigitalOcean.html">5. Proceso Carga base de datos en nube DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/transformaciones_analitica.html">6. Transformación de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/exploratory_data_analysis.html">7. Analisis Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/ProcesoAlmacenamientoAWS.html">8. Carga de información base de datos AWS.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/machine_learning_supervisado.html">9. Machine Learning Supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/machine_learning_no_supervisado.html">10. Machine Learning No Supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter2/Creacion_dashboard.html">11. Creación de dashboard</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conclusiones y referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter3/Conclusiones.html">12. Conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/chapter4/Bibliografia.html">13. Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Jero2760/jupyter-book-ejemplo/master?urlpath=tree/docs/transform-EDA-main/transform-EDA-main/exploratory_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Jero2760/jupyter-book-ejemplo/blob/master/docs/transform-EDA-main/transform-EDA-main/exploratory_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/edit/master/docs/transform-EDA-main/transform-EDA-main/exploratory_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/issues/new?title=Issue%20on%20page%20%2Ftransform-EDA-main/transform-EDA-main/exploratory_data_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/transform-EDA-main/transform-EDA-main/exploratory_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analisis Exploratorio de Datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-a-la-base-de-datos-de-analitica-en-aws">Conexión a la Base de Datos de Analítica en AWS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-dataset-de-analitica">Lectura del DataSet de Analítica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-del-dataset-y-sus-variables">Exploración del Dataset y sus Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-las-variables">Descripción de las Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-unidades-a-las-unidades-de-analisis">Conversion de Unidades a las Unidades de Análisis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-descriptiva">Estadistica Descriptiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticos-del-dataset">Estadisticos del Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-las-distribuiciones-de-las-variables">Visualización de las distribuiciones de las variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-series-de-tiempo">Visualizacion de Series de Tiempo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-energia">Variables de Energía</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-y-demanda">Generación y Demanda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perdidas-de-energia-del-sistema">Perdidas de Energía del Sistema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aportes-de-energia-por-lluvia-vs-media-historica-de-aportes">Aportes de Energía por Lluvia vs Media Historica de Aportes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-y-volumen-util-del-sistema">Capacidad y Volumen Util del Sistema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disponibilidad-real">Disponibilidad Real</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consumo-de-combustible-de-las-plantas-termicas">Consumo de Combustible de las Plantas Térmicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precio-bolsa-nacional-y-precio-de-escasez">Precio Bolsa Nacional y Precio de Escasez</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-series-temporales">Análisis de Series Temporales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-2010-a-principios-de-2015">Análisis de 2010 a principios de 2015</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-final-de-2015-e-inicios-de-2016">Análisis del final de 2015 e inicios de 2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-efectos-del-fenomeno-del-nino-en-el-sin">Principales efectos del Fenómeno del Niño en el SIN</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-ano-2020">Análisis del año 2020</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-correlaciones">Análisis de Correlaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Seleccion de Variables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-exploratorio-de-datos">
+<h1><strong>Analisis Exploratorio de Datos</strong><a class="headerlink" href="#analisis-exploratorio-de-datos" title="Link to this heading">#</a></h1>
+<p>Los objetivos del presente proyecto de analisis de datos son:</p>
+<ol class="arabic simple">
+<li><p>Comprender el comportamiento general del precio del sistema interconectado nacional.</p></li>
+<li><p>Determinar la correlacion del precio con las otras variables del sistema de generación eléctrica.</p></li>
+<li><p>Comprender la influencia de los fenomenos climáticos en el precio del SIN.</p></li>
+<li><p>Encontrar la influencia del consumo de combustible en el precio de la eléctricidad.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">import</span> <span class="nn">dotenv</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s1">&#39;notebook&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;Spectral&quot;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="vertical-align: middle;"><strong>Spectral</strong> </div><div class="cmap"><img alt="Spectral colormap" title="Spectral" style="border: 1px solid #555;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAABACAYAAABsv8+/AAAAF3RFWHRUaXRsZQBTcGVjdHJhbCBjb2xvcm1hcI/oV9sAAAAddEVYdERlc2NyaXB0aW9uAFNwZWN0cmFsIGNvbG9ybWFwppaw8gAAADB0RVh0QXV0aG9yAE1hdHBsb3RsaWIgdjMuOS4wLCBodHRwczovL21hdHBsb3RsaWIub3Jn8f/jDgAAADJ0RVh0U29mdHdhcmUATWF0cGxvdGxpYiB2My45LjAsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmffWXwpAAACDklEQVR4nO3WO3KDMABFUQl2loVmp5gUCGaQzcgxSfXOaTT6AMZ2cet3/VpLKWWaStnGuo1zN9/3520+d/PR9fPgflfz+erzXN2vjfWYr6d57ed1fXnd07mpO1cH+xfPefdz7fcp7f1K+15qN9/36/GDDM4f69N5/bjP1Xzqrv/lfafuPlP3eYfrd6//m/X6/Ed5Pf7Vuf9+Xtneby2PNm7/w3UdzPfzaz9/91w3v/nc0vaXbSiPY6zdej3tL9389vnS7997Tv8+SzcO1x8fXvfp857W23ssbf6o53Gpr9dH+59e176PT++7tveY2gv3Y10u1vvz7Ye53h9df7H+7v4+FgAgjgAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAAC/QB9nBLdjK/6iAAAAABJRU5ErkJggg=="></div><div style="vertical-align: middle; max-width: 514px; display: flex; justify-content: space-between;"><div style="float: left;"><div title="#9e0142ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #9e0142ff;"></div> under</div><div style="margin: 0 auto; display: inline-block;">bad <div title="#00000000" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #00000000;"></div></div><div style="float: right;">over <div title="#5e4fa2ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #5e4fa2ff;"></div></div></div></div>
+</div>
+<section id="conexion-a-la-base-de-datos-de-analitica-en-aws">
+<h2>Conexión a la Base de Datos de Analítica en AWS<a class="headerlink" href="#conexion-a-la-base-de-datos-de-analitica-en-aws" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">(</span><span class="s2">&quot;vars.env&quot;</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">db_user</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DB_USER_AWS&#39;</span><span class="p">)</span>
+<span class="n">db_password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DB_PASSWORD_AWS&#39;</span><span class="p">)</span>
+<span class="n">db_host</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DB_HOST_AWS&#39;</span><span class="p">)</span>
+<span class="n">db_port</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DB_PORT_AWS&#39;</span><span class="p">)</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;DB_NAME_AWS&#39;</span><span class="p">)</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;postgresql://</span><span class="si">{</span><span class="n">db_user</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">db_password</span><span class="si">}</span><span class="s1">@</span><span class="si">{</span><span class="n">db_host</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">db_port</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectura-del-dataset-de-analitica">
+<h2>Lectura del DataSet de Analítica<a class="headerlink" href="#lectura-del-dataset-de-analitica" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT * FROM analitica_sistema_electrico_colombia&quot;&quot;&quot;</span>
+<span class="n">df_sistema_electrico</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_query</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">conn</span><span class="p">)</span>
+<span class="n">df_sistema_electrico</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_sistema_electrico</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">df_sistema_electrico</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>generacion_sistema_daily</th>
+      <th>generacion_ideal_sistema_daily</th>
+      <th>perdidas_sistema_daily</th>
+      <th>volumen_util_energia_sistema_daily</th>
+      <th>emisiones_sistema_daily</th>
+      <th>aportes_energia_sistema_daily</th>
+      <th>aportes_energia_mediaHist_sistema_daily</th>
+      <th>capacidad_util_energia_sistema_daily</th>
+      <th>demanda_real_sistema_daily</th>
+      <th>exportaciones_sistema_daily</th>
+      <th>importaciones_sistema_daily</th>
+      <th>precio_bolsa_sistema_daily</th>
+      <th>precio_escasez_sistema_daily</th>
+      <th>comsumo_combustible_daily</th>
+      <th>disponibilidad_real_daily</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2010-01-01</td>
+      <td>1.154191e+08</td>
+      <td>1.154409e+08</td>
+      <td>2079352.97</td>
+      <td>1.000661e+10</td>
+      <td>0.00000</td>
+      <td>45616100</td>
+      <td>75130000</td>
+      <td>15428396811</td>
+      <td>1.133616e+08</td>
+      <td>4536.91</td>
+      <td>21849.64</td>
+      <td>120.501228</td>
+      <td>356.70894</td>
+      <td>7.278816e+05</td>
+      <td>1.201925e+07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2010-01-02</td>
+      <td>1.276812e+08</td>
+      <td>1.276983e+08</td>
+      <td>2226467.46</td>
+      <td>9.995147e+09</td>
+      <td>0.00000</td>
+      <td>43097100</td>
+      <td>75130000</td>
+      <td>15428396811</td>
+      <td>1.254718e+08</td>
+      <td>12551.38</td>
+      <td>17079.39</td>
+      <td>118.495340</td>
+      <td>355.06286</td>
+      <td>7.439290e+05</td>
+      <td>1.198702e+07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2010-01-03</td>
+      <td>1.236378e+08</td>
+      <td>1.236548e+08</td>
+      <td>2509638.35</td>
+      <td>9.992677e+09</td>
+      <td>0.00000</td>
+      <td>43400400</td>
+      <td>75130000</td>
+      <td>15428396811</td>
+      <td>1.211452e+08</td>
+      <td>9118.35</td>
+      <td>17032.69</td>
+      <td>121.160145</td>
+      <td>355.07299</td>
+      <td>7.490638e+05</td>
+      <td>1.199573e+07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2010-01-04</td>
+      <td>1.459575e+08</td>
+      <td>1.444114e+08</td>
+      <td>2032914.64</td>
+      <td>9.965341e+09</td>
+      <td>0.00000</td>
+      <td>40410400</td>
+      <td>75130000</td>
+      <td>15428396811</td>
+      <td>1.439317e+08</td>
+      <td>1513370.10</td>
+      <td>7174.60</td>
+      <td>123.962937</td>
+      <td>355.07299</td>
+      <td>7.727362e+05</td>
+      <td>1.158610e+07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010-01-05</td>
+      <td>1.521480e+08</td>
+      <td>1.490348e+08</td>
+      <td>2278901.51</td>
+      <td>9.926760e+09</td>
+      <td>0.00000</td>
+      <td>41190600</td>
+      <td>75130000</td>
+      <td>15428396811</td>
+      <td>1.498691e+08</td>
+      <td>3057651.95</td>
+      <td>0.00</td>
+      <td>120.666437</td>
+      <td>354.78317</td>
+      <td>7.674916e+05</td>
+      <td>1.165207e+07</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5229</th>
+      <td>2024-04-26</td>
+      <td>2.246048e+08</td>
+      <td>2.246048e+08</td>
+      <td>3468541.50</td>
+      <td>5.399084e+09</td>
+      <td>81390.03841</td>
+      <td>175197100</td>
+      <td>222790000</td>
+      <td>17359561885</td>
+      <td>2.211362e+08</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>215.201028</td>
+      <td>742.65054</td>
+      <td>1.077649e+06</td>
+      <td>1.492237e+07</td>
+    </tr>
+    <tr>
+      <th>5230</th>
+      <td>2024-04-27</td>
+      <td>2.171655e+08</td>
+      <td>2.171655e+08</td>
+      <td>3317765.92</td>
+      <td>5.454065e+09</td>
+      <td>72221.14808</td>
+      <td>190925700</td>
+      <td>222790000</td>
+      <td>17359561885</td>
+      <td>2.138478e+08</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>160.221522</td>
+      <td>742.65054</td>
+      <td>9.592092e+05</td>
+      <td>1.465035e+07</td>
+    </tr>
+    <tr>
+      <th>5231</th>
+      <td>2024-04-28</td>
+      <td>1.941888e+08</td>
+      <td>1.941931e+08</td>
+      <td>2880163.08</td>
+      <td>5.557993e+09</td>
+      <td>65899.83428</td>
+      <td>206187700</td>
+      <td>222790000</td>
+      <td>17359561885</td>
+      <td>1.913129e+08</td>
+      <td>12438.22</td>
+      <td>4315.01</td>
+      <td>106.818940</td>
+      <td>742.65054</td>
+      <td>8.649091e+05</td>
+      <td>1.526666e+07</td>
+    </tr>
+    <tr>
+      <th>5232</th>
+      <td>2024-04-29</td>
+      <td>2.223545e+08</td>
+      <td>2.223672e+08</td>
+      <td>2869374.84</td>
+      <td>5.672510e+09</td>
+      <td>50743.73833</td>
+      <td>303206200</td>
+      <td>222790000</td>
+      <td>17359561885</td>
+      <td>2.194978e+08</td>
+      <td>41646.96</td>
+      <td>12662.44</td>
+      <td>136.110230</td>
+      <td>742.65054</td>
+      <td>6.467688e+05</td>
+      <td>1.529123e+07</td>
+    </tr>
+    <tr>
+      <th>5233</th>
+      <td>2024-04-30</td>
+      <td>2.338582e+08</td>
+      <td>2.338609e+08</td>
+      <td>3001295.88</td>
+      <td>5.713246e+09</td>
+      <td>55748.65088</td>
+      <td>204872300</td>
+      <td>222790000</td>
+      <td>17359561885</td>
+      <td>2.308596e+08</td>
+      <td>5537020.08</td>
+      <td>2745.26</td>
+      <td>128.089897</td>
+      <td>742.65054</td>
+      <td>7.153230e+05</td>
+      <td>1.512967e+07</td>
+    </tr>
+  </tbody>
+</table>
+<p>5234 rows × 16 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico</span> <span class="o">=</span> <span class="n">df_sistema_electrico</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploracion-del-dataset-y-sus-variables">
+<h2>Exploración del Dataset y sus Variables<a class="headerlink" href="#exploracion-del-dataset-y-sus-variables" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 5234 entries, 2010-01-01 to 2024-04-30
+Data columns (total 15 columns):
+ #   Column                                   Non-Null Count  Dtype  
+---  ------                                   --------------  -----  
+ 0   generacion_sistema_daily                 5234 non-null   float64
+ 1   generacion_ideal_sistema_daily           5234 non-null   float64
+ 2   perdidas_sistema_daily                   5234 non-null   float64
+ 3   volumen_util_energia_sistema_daily       5234 non-null   float64
+ 4   emisiones_sistema_daily                  5234 non-null   float64
+ 5   aportes_energia_sistema_daily            5234 non-null   int64  
+ 6   aportes_energia_mediaHist_sistema_daily  5234 non-null   int64  
+ 7   capacidad_util_energia_sistema_daily     5234 non-null   int64  
+ 8   demanda_real_sistema_daily               5234 non-null   float64
+ 9   exportaciones_sistema_daily              5234 non-null   float64
+ 10  importaciones_sistema_daily              5234 non-null   float64
+ 11  precio_bolsa_sistema_daily               5234 non-null   float64
+ 12  precio_escasez_sistema_daily             5234 non-null   float64
+ 13  comsumo_combustible_daily                5234 non-null   float64
+ 14  disponibilidad_real_daily                5234 non-null   float64
+dtypes: float64(12), int64(3)
+memory usage: 654.2 KB
+</pre></div>
+</div>
+</div>
+</div>
+<section id="descripcion-de-las-variables">
+<h3>Descripción de las Variables<a class="headerlink" href="#descripcion-de-las-variables" title="Link to this heading">#</a></h3>
+<p>A continuación se lista todas las variables disponibles para el analisis.
+El dataset continue el valor de la variable por cada dia de operacion del sistema.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Metrica</p></th>
+<th class="head"><p>Unidad</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Unidad de Análisis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>generacion_sistema_daily</p></td>
+<td><p>Generación por Sistema</p></td>
+<td><p>kWh</p></td>
+<td><p>Generación neta de cada una de las plantas Nacionales en sus puntos de frontera.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>generacion_ideal_sistema_daily</p></td>
+<td><p>Generación Ideal por Sistema</p></td>
+<td><p>kWh</p></td>
+<td><p>Despacho de generación que resulta de considerar una red de transporte inexistente.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>perdidas_sistema_daily</p></td>
+<td><p>Pérdidas de Energía por Sistema</p></td>
+<td><p>kWh</p></td>
+<td><p>Cantidad de las inyecciones de energía al Sistema de Transmisión Nacional, menos la cantidad de los flujos…</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>volumen_util_energia_sistema_daily</p></td>
+<td><p>Volumen Útil diario Energía Sistema</p></td>
+<td><p>kWh</p></td>
+<td><p>Volumen almacenado por encima del Nivel Mínimo Técnico, reportado diariamente por los agentes.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>emisiones_sistema_daily</p></td>
+<td><p>Emisiones de CO2 por RecursoComb</p></td>
+<td><p>TonCO2</p></td>
+<td><p>Emisiones totales de Dióxido de Carbono – CO2 de las plantas de generación registradas ante el CND.</p></td>
+<td><p>kTonCO2</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>aportes_energia_sistema_daily</p></td>
+<td><p>Aportes Energía por Río</p></td>
+<td><p>kWh</p></td>
+<td><p>Caudales en energía de los ríos que aportan agua a algún embalse del SIN.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>aportes_energia_mediaHist_sistema_daily</p></td>
+<td><p>Aportes Media Histórica Energía por Río</p></td>
+<td><p>kWh</p></td>
+<td><p>Caudal medio mensual histórico en energía para los ríos del SIN.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>capacidad_util_energia_sistema_daily</p></td>
+<td><p>Capacidad Útil Energía por Embalse</p></td>
+<td><p>kWh</p></td>
+<td><p>Corresponde al Volumen Útil del Embalse, que se define como el volumen almacenado entre el nivel Mínimo Técnico y el Nivel Máximo Físico</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>demanda_real_sistema_daily</p></td>
+<td><p>Demanda Real por sistema</p></td>
+<td><p>kWh</p></td>
+<td><p>Demanda de usuarios regulados y no regulados que hacen parte del Sistema Interconectado Nacional.</p></td>
+<td><p>GWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>exportaciones_sistema_daily</p></td>
+<td><p>Exportaciones de energía</p></td>
+<td><p>kWh</p></td>
+<td><p>Transferencias de Energía desde Colombia hacia otros países.</p></td>
+<td><p>MWh</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>importaciones_sistema_daily</p></td>
+<td><p>Importaciones de energía</p></td>
+<td><p>kWh</p></td>
+<td><p>Transferencias de Energía desde otros países para abastecer la demanda nacional.</p></td>
+<td><p>MWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>precio_bolsa_sistema_daily</p></td>
+<td><p>Precio Bolsa Promedio Aritmético</p></td>
+<td><p>COP/kWh</p></td>
+<td><p>Promedio aritmético del precio de bolsa nacional.</p></td>
+<td><p>COP/kWh</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>precio_escasez_sistema_daily</p></td>
+<td><p>Precio Marginal Escasez por Sistema</p></td>
+<td><p>COP/kWh</p></td>
+<td><p>Precio Marginal de Escasez calculado de acuerdo con la Resolución CREG 140 del 2017.</p></td>
+<td><p>COP/kWh</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>comsumo_combustible_daily</p></td>
+<td><p>Consumo Combustible MBTU por Recurso</p></td>
+<td><p>MBTU</p></td>
+<td><p>Los generadores térmicos deben reportar diariamente el consumo de combustible en MBTU.</p></td>
+<td><p>MMBTU</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>disponibilidad_real_daily</p></td>
+<td><p>Disponibilidad Real</p></td>
+<td><p>kW</p></td>
+<td><p>Disponibilidad promedio calculada a partir de la fecha de los eventos que modifican la disponibilidad de las unidades de generacion de los generadores, asi como de la disponibilidad reportada al Centro de despacho.</p></td>
+<td><p>MW</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="conversion-de-unidades-a-las-unidades-de-analisis">
+<h3>Conversion de Unidades a las Unidades de Análisis<a class="headerlink" href="#conversion-de-unidades-a-las-unidades-de-analisis" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convertir_unidades</span><span class="p">(</span><span class="n">df</span><span class="p">):</span> 
+    <span class="c1"># Crear un diccionario con los factores de conversión</span>
+    <span class="n">conversion_factors</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;generacion_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;generacion_ideal_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;perdidas_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;volumen_util_energia_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;emisiones_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>  <span class="c1"># TonCO2 to kTonCO2</span>
+        <span class="s1">&#39;aportes_energia_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;aportes_energia_mediaHist_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;capacidad_util_energia_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;demanda_real_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>  <span class="c1"># kWh to GWh</span>
+        <span class="s1">&#39;exportaciones_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>  <span class="c1"># kWh to MWh</span>
+        <span class="s1">&#39;importaciones_sistema_daily&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>  <span class="c1"># kwh to MWh</span>
+        <span class="s1">&#39;precio_bolsa_sistema_daily&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># COP/kWh to COP/kWh (no conversion needed)</span>
+        <span class="s1">&#39;precio_escasez_sistema_daily&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># COP/kWh to COP/kWh (no conversion needed)</span>
+        <span class="s1">&#39;comsumo_combustible_daily&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>  <span class="c1"># MBTU to MMBTU</span>
+        <span class="s1">&#39;disponibilidad_real_daily&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>  <span class="c1"># kWh to MWh</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Aplicar las conversiones</span>
+    <span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">conversion_factors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">*</span> <span class="n">factor</span>
+
+    <span class="c1"># Mostrar el DataFrame convertido</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span> <span class="o">=</span> <span class="n">df_sistema_electrico</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_sistema_electrico_converted</span> <span class="o">=</span> <span class="n">convertir_unidades</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">)</span>
+<span class="n">df_sistema_electrico_converted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>generacion_sistema_daily</th>
+      <th>generacion_ideal_sistema_daily</th>
+      <th>perdidas_sistema_daily</th>
+      <th>volumen_util_energia_sistema_daily</th>
+      <th>emisiones_sistema_daily</th>
+      <th>aportes_energia_sistema_daily</th>
+      <th>aportes_energia_mediaHist_sistema_daily</th>
+      <th>capacidad_util_energia_sistema_daily</th>
+      <th>demanda_real_sistema_daily</th>
+      <th>exportaciones_sistema_daily</th>
+      <th>importaciones_sistema_daily</th>
+      <th>precio_bolsa_sistema_daily</th>
+      <th>precio_escasez_sistema_daily</th>
+      <th>comsumo_combustible_daily</th>
+      <th>disponibilidad_real_daily</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010-01-01</th>
+      <td>115.419084</td>
+      <td>115.440934</td>
+      <td>2.079353</td>
+      <td>10006.614779</td>
+      <td>0.000000</td>
+      <td>45.6161</td>
+      <td>75.13</td>
+      <td>15428.396811</td>
+      <td>113.361581</td>
+      <td>4.53691</td>
+      <td>21.84964</td>
+      <td>120.501228</td>
+      <td>356.70894</td>
+      <td>727.881567</td>
+      <td>12019.253333</td>
+    </tr>
+    <tr>
+      <th>2010-01-02</th>
+      <td>127.681195</td>
+      <td>127.698274</td>
+      <td>2.226467</td>
+      <td>9995.146811</td>
+      <td>0.000000</td>
+      <td>43.0971</td>
+      <td>75.13</td>
+      <td>15428.396811</td>
+      <td>125.471807</td>
+      <td>12.55138</td>
+      <td>17.07939</td>
+      <td>118.495340</td>
+      <td>355.06286</td>
+      <td>743.929011</td>
+      <td>11987.024167</td>
+    </tr>
+    <tr>
+      <th>2010-01-03</th>
+      <td>123.637778</td>
+      <td>123.654811</td>
+      <td>2.509638</td>
+      <td>9992.677303</td>
+      <td>0.000000</td>
+      <td>43.4004</td>
+      <td>75.13</td>
+      <td>15428.396811</td>
+      <td>121.145173</td>
+      <td>9.11835</td>
+      <td>17.03269</td>
+      <td>121.160145</td>
+      <td>355.07299</td>
+      <td>749.063827</td>
+      <td>11995.728333</td>
+    </tr>
+    <tr>
+      <th>2010-01-04</th>
+      <td>145.957459</td>
+      <td>144.411382</td>
+      <td>2.032915</td>
+      <td>9965.341214</td>
+      <td>0.000000</td>
+      <td>40.4104</td>
+      <td>75.13</td>
+      <td>15428.396811</td>
+      <td>143.931719</td>
+      <td>1513.37010</td>
+      <td>7.17460</td>
+      <td>123.962937</td>
+      <td>355.07299</td>
+      <td>772.736247</td>
+      <td>11586.104167</td>
+    </tr>
+    <tr>
+      <th>2010-01-05</th>
+      <td>152.148029</td>
+      <td>149.034819</td>
+      <td>2.278902</td>
+      <td>9926.759570</td>
+      <td>0.000000</td>
+      <td>41.1906</td>
+      <td>75.13</td>
+      <td>15428.396811</td>
+      <td>149.869128</td>
+      <td>3057.65195</td>
+      <td>0.00000</td>
+      <td>120.666437</td>
+      <td>354.78317</td>
+      <td>767.491641</td>
+      <td>11652.071667</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2024-04-26</th>
+      <td>224.604764</td>
+      <td>224.604764</td>
+      <td>3.468542</td>
+      <td>5399.083900</td>
+      <td>81.390038</td>
+      <td>175.1971</td>
+      <td>222.79</td>
+      <td>17359.561885</td>
+      <td>221.136223</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>215.201028</td>
+      <td>742.65054</td>
+      <td>1077.648732</td>
+      <td>14922.365750</td>
+    </tr>
+    <tr>
+      <th>2024-04-27</th>
+      <td>217.165537</td>
+      <td>217.165537</td>
+      <td>3.317766</td>
+      <td>5454.064900</td>
+      <td>72.221148</td>
+      <td>190.9257</td>
+      <td>222.79</td>
+      <td>17359.561885</td>
+      <td>213.847772</td>
+      <td>0.00000</td>
+      <td>0.00000</td>
+      <td>160.221522</td>
+      <td>742.65054</td>
+      <td>959.209242</td>
+      <td>14650.352500</td>
+    </tr>
+    <tr>
+      <th>2024-04-28</th>
+      <td>194.188787</td>
+      <td>194.193102</td>
+      <td>2.880163</td>
+      <td>5557.993200</td>
+      <td>65.899834</td>
+      <td>206.1877</td>
+      <td>222.79</td>
+      <td>17359.561885</td>
+      <td>191.312939</td>
+      <td>12.43822</td>
+      <td>4.31501</td>
+      <td>106.818940</td>
+      <td>742.65054</td>
+      <td>864.909070</td>
+      <td>15266.665000</td>
+    </tr>
+    <tr>
+      <th>2024-04-29</th>
+      <td>222.354541</td>
+      <td>222.367204</td>
+      <td>2.869375</td>
+      <td>5672.509900</td>
+      <td>50.743738</td>
+      <td>303.2062</td>
+      <td>222.79</td>
+      <td>17359.561885</td>
+      <td>219.497829</td>
+      <td>41.64696</td>
+      <td>12.66244</td>
+      <td>136.110230</td>
+      <td>742.65054</td>
+      <td>646.768820</td>
+      <td>15291.233750</td>
+    </tr>
+    <tr>
+      <th>2024-04-30</th>
+      <td>233.858164</td>
+      <td>233.860909</td>
+      <td>3.001296</td>
+      <td>5713.245700</td>
+      <td>55.748651</td>
+      <td>204.8723</td>
+      <td>222.79</td>
+      <td>17359.561885</td>
+      <td>230.859613</td>
+      <td>5537.02008</td>
+      <td>2.74526</td>
+      <td>128.089897</td>
+      <td>742.65054</td>
+      <td>715.322984</td>
+      <td>15129.669792</td>
+    </tr>
+  </tbody>
+</table>
+<p>5234 rows × 15 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="estadistica-descriptiva">
+<h2>Estadistica Descriptiva<a class="headerlink" href="#estadistica-descriptiva" title="Link to this heading">#</a></h2>
+<section id="estadisticos-del-dataset">
+<h3>Estadisticos del Dataset<a class="headerlink" href="#estadisticos-del-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>generacion_sistema_daily</th>
+      <th>generacion_ideal_sistema_daily</th>
+      <th>perdidas_sistema_daily</th>
+      <th>volumen_util_energia_sistema_daily</th>
+      <th>emisiones_sistema_daily</th>
+      <th>aportes_energia_sistema_daily</th>
+      <th>aportes_energia_mediaHist_sistema_daily</th>
+      <th>capacidad_util_energia_sistema_daily</th>
+      <th>demanda_real_sistema_daily</th>
+      <th>exportaciones_sistema_daily</th>
+      <th>importaciones_sistema_daily</th>
+      <th>precio_bolsa_sistema_daily</th>
+      <th>precio_escasez_sistema_daily</th>
+      <th>comsumo_combustible_daily</th>
+      <th>disponibilidad_real_daily</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+      <td>5234.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>185.062136</td>
+      <td>185.175181</td>
+      <td>2.800156</td>
+      <td>10866.323553</td>
+      <td>14.180502</td>
+      <td>162.732899</td>
+      <td>167.408424</td>
+      <td>16494.452831</td>
+      <td>183.253813</td>
+      <td>1731.938017</td>
+      <td>991.816631</td>
+      <td>225.569533</td>
+      <td>499.731301</td>
+      <td>381.504848</td>
+      <td>12891.569094</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>22.842767</td>
+      <td>22.883043</td>
+      <td>0.568683</td>
+      <td>2412.985776</td>
+      <td>18.506221</td>
+      <td>79.487528</td>
+      <td>49.623124</td>
+      <td>932.983913</td>
+      <td>22.869576</td>
+      <td>2978.019699</td>
+      <td>2152.138271</td>
+      <td>205.734350</td>
+      <td>182.292409</td>
+      <td>172.910657</td>
+      <td>1201.738775</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>115.419084</td>
+      <td>115.440934</td>
+      <td>-2.118570</td>
+      <td>4958.518300</td>
+      <td>0.000000</td>
+      <td>29.032100</td>
+      <td>69.770000</td>
+      <td>15097.508374</td>
+      <td>113.361581</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>35.356673</td>
+      <td>289.787340</td>
+      <td>113.521375</td>
+      <td>8850.326083</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>168.157388</td>
+      <td>168.207475</td>
+      <td>2.432048</td>
+      <td>9258.527770</td>
+      <td>0.000000</td>
+      <td>104.724325</td>
+      <td>127.120000</td>
+      <td>15428.396811</td>
+      <td>166.184080</td>
+      <td>4.538617</td>
+      <td>0.865135</td>
+      <td>106.351090</td>
+      <td>363.176550</td>
+      <td>249.152440</td>
+      <td>11991.579583</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>184.299340</td>
+      <td>184.529427</td>
+      <td>2.753888</td>
+      <td>11088.633250</td>
+      <td>0.000000</td>
+      <td>149.289550</td>
+      <td>177.260000</td>
+      <td>16920.877858</td>
+      <td>182.850101</td>
+      <td>39.605140</td>
+      <td>11.467630</td>
+      <td>158.982260</td>
+      <td>449.830580</td>
+      <td>340.935961</td>
+      <td>12975.459625</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>199.077388</td>
+      <td>199.330480</td>
+      <td>3.118325</td>
+      <td>12777.188541</td>
+      <td>24.442364</td>
+      <td>205.474700</td>
+      <td>206.670000</td>
+      <td>17197.713215</td>
+      <td>198.366957</td>
+      <td>2418.663413</td>
+      <td>374.573627</td>
+      <td>247.326889</td>
+      <td>555.401030</td>
+      <td>476.947453</td>
+      <td>13803.071729</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>250.439131</td>
+      <td>250.439131</td>
+      <td>7.079952</td>
+      <td>15649.798000</td>
+      <td>83.577438</td>
+      <td>591.245300</td>
+      <td>280.040000</td>
+      <td>18237.183030</td>
+      <td>246.937412</td>
+      <td>35052.391050</td>
+      <td>10911.030180</td>
+      <td>1942.692797</td>
+      <td>1037.232360</td>
+      <td>1104.847110</td>
+      <td>16699.097167</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visualizacion-de-las-distribuiciones-de-las-variables">
+<h3>Visualización de las distribuiciones de las variables<a class="headerlink" href="#visualizacion-de-las-distribuiciones-de-las-variables" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modificar la función para aceptar un objeto Axes</span>
+<span class="k">def</span> <span class="nf">plot_distribution</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="c1"># Histograma de distribución</span>
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">hist</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">hist</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="n">hist</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="c1"># Boxplot superpuesto</span>
+    <span class="n">dist_box</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">dist_box</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">showfliers</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">dist_box</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Nueva función para crear subplots</span>
+<span class="k">def</span> <span class="nf">plot_all_distributions</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">num_columns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">num_rows</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">num_cols</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">num_columns</span> <span class="o">/</span> <span class="n">num_rows</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">num_rows</span><span class="p">,</span> <span class="n">num_cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">num_rows</span><span class="p">))</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>  <span class="c1"># Aplanar el array de ejes para un fácil acceso</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+        <span class="n">xlabel</span> <span class="o">=</span> <span class="n">column</span>
+        <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Frequencia&#39;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">plot_distribution</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">df</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+    
+    <span class="c1"># Eliminar los ejes vacíos si el número de subplots no es múltiplo de num_rows</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_rows</span> <span class="o">*</span> <span class="n">num_cols</span><span class="p">):</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">delaxes</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plot_all_distributions</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/f07670daba6943c385edd2eeb8dce5c277a0c9c58a1be6eb5273a856eb1e7917.png"><img alt="../../_images/f07670daba6943c385edd2eeb8dce5c277a0c9c58a1be6eb5273a856eb1e7917.png" src="../../_images/f07670daba6943c385edd2eeb8dce5c277a0c9c58a1be6eb5273a856eb1e7917.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+</section>
+<section id="visualizacion-de-series-de-tiempo">
+<h2>Visualizacion de Series de Tiempo<a class="headerlink" href="#visualizacion-de-series-de-tiempo" title="Link to this heading">#</a></h2>
+<p>Con el fin de encontrar datos anómalos realizaremos construiremos varias gráficas de las variables vs el tiempo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_time_series</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns_to_plot</span><span class="p">,</span> <span class="n">titulo</span><span class="p">,</span> <span class="n">unidades</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función genera un gráfico de línea de tiempo para las columnas especificadas en un DataFrame.</span>
+
+<span class="sd">    :param df: pandas DataFrame que contiene los datos a graficar.</span>
+<span class="sd">    :param columns_to_plot: lista de columnas del DataFrame que se desean graficar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Verificar que el índice del DataFrame sea de tipo datetime</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;El índice del DataFrame debe ser de tipo datetime&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Verificar que las columnas a graficar estén en el DataFrame</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_plot</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39; no está en el DataFrame&quot;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns_to_plot</span><span class="p">:</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">column</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">column</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">unidades</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titulo</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variables-de-energia">
+<h2>Variables de Energía<a class="headerlink" href="#variables-de-energia" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;generacion_sistema_daily&#39;, &#39;generacion_ideal_sistema_daily&#39;,
+       &#39;perdidas_sistema_daily&#39;, &#39;volumen_util_energia_sistema_daily&#39;,
+       &#39;emisiones_sistema_daily&#39;, &#39;aportes_energia_sistema_daily&#39;,
+       &#39;aportes_energia_mediaHist_sistema_daily&#39;,
+       &#39;capacidad_util_energia_sistema_daily&#39;, &#39;demanda_real_sistema_daily&#39;,
+       &#39;exportaciones_sistema_daily&#39;, &#39;importaciones_sistema_daily&#39;,
+       &#39;precio_bolsa_sistema_daily&#39;, &#39;precio_escasez_sistema_daily&#39;,
+       &#39;comsumo_combustible_daily&#39;, &#39;disponibilidad_real_daily&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="generacion-y-demanda">
+<h3>Generación y Demanda<a class="headerlink" href="#generacion-y-demanda" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;generacion_sistema_daily&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;generacion_ideal_sistema_daily&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;demanda_real_sistema_daily&#39;</span><span class="p">,</span>
+                                                  <span class="p">],</span> <span class="s1">&#39;Generación y Demanda&#39;</span><span class="p">,</span> <span class="s1">&#39;GWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/9b612d2ef761357619822650ca935fed29631d6b813969008d0c2f3ff558fdf5.png"><img alt="../../_images/9b612d2ef761357619822650ca935fed29631d6b813969008d0c2f3ff558fdf5.png" src="../../_images/9b612d2ef761357619822650ca935fed29631d6b813969008d0c2f3ff558fdf5.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="perdidas-de-energia-del-sistema">
+<h3>Perdidas de Energía del Sistema<a class="headerlink" href="#perdidas-de-energia-del-sistema" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;perdidas_sistema_daily&#39;</span><span class="p">],</span> <span class="s1">&#39;Perdidas de Energía del Sistema&#39;</span><span class="p">,</span> <span class="s1">&#39;GWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/a5b3df0f5fefde95b8afd726a52b22714e344f79d8d05fe152cf5e1121445578.png"><img alt="../../_images/a5b3df0f5fefde95b8afd726a52b22714e344f79d8d05fe152cf5e1121445578.png" src="../../_images/a5b3df0f5fefde95b8afd726a52b22714e344f79d8d05fe152cf5e1121445578.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="aportes-de-energia-por-lluvia-vs-media-historica-de-aportes">
+<h3>Aportes de Energía por Lluvia vs Media Historica de Aportes<a class="headerlink" href="#aportes-de-energia-por-lluvia-vs-media-historica-de-aportes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;aportes_energia_sistema_daily&#39;</span><span class="p">,</span> <span class="s1">&#39;aportes_energia_mediaHist_sistema_daily&#39;</span><span class="p">],</span> <span class="s1">&#39;Aportes de Energía por lluvia vs Media historica&#39;</span><span class="p">,</span> <span class="s1">&#39;GWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/aa6e80e43ed86a3aafb900757b9f36f545afd035e2978d182d40cc4770111fb4.png"><img alt="../../_images/aa6e80e43ed86a3aafb900757b9f36f545afd035e2978d182d40cc4770111fb4.png" src="../../_images/aa6e80e43ed86a3aafb900757b9f36f545afd035e2978d182d40cc4770111fb4.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="capacidad-y-volumen-util-del-sistema">
+<h3>Capacidad y Volumen Util del Sistema<a class="headerlink" href="#capacidad-y-volumen-util-del-sistema" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;capacidad_util_energia_sistema_daily&#39;</span><span class="p">,</span> 
+                                                  <span class="s1">&#39;volumen_util_energia_sistema_daily&#39;</span><span class="p">],</span> 
+                                                  <span class="s1">&#39;Capacidad Util Vs Volumen Util&#39;</span><span class="p">,</span> <span class="s1">&#39;GWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/c9a69cf57b7c92d3e12e107ba74af5313de0e65feda2e5f56de66bbbd26a2045.png"><img alt="../../_images/c9a69cf57b7c92d3e12e107ba74af5313de0e65feda2e5f56de66bbbd26a2045.png" src="../../_images/c9a69cf57b7c92d3e12e107ba74af5313de0e65feda2e5f56de66bbbd26a2045.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span><span class="p">[</span><span class="s1">&#39;volumen_util_energia_sistema_daily&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2024-04-18 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="disponibilidad-real">
+<h3>Disponibilidad Real<a class="headerlink" href="#disponibilidad-real" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;disponibilidad_real_daily&#39;</span><span class="p">],</span> <span class="s1">&#39;Disponibilidad Real del Sistema&#39;</span><span class="p">,</span> <span class="s1">&#39;MW&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/609c086cf8d1ad4b613e60b3e7cfd4c944caf9053b6ca36cad816905c52d54cc.png"><img alt="../../_images/609c086cf8d1ad4b613e60b3e7cfd4c944caf9053b6ca36cad816905c52d54cc.png" src="../../_images/609c086cf8d1ad4b613e60b3e7cfd4c944caf9053b6ca36cad816905c52d54cc.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="consumo-de-combustible-de-las-plantas-termicas">
+<h3>Consumo de Combustible de las Plantas Térmicas<a class="headerlink" href="#consumo-de-combustible-de-las-plantas-termicas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;comsumo_combustible_daily&#39;</span><span class="p">],</span> <span class="s1">&#39;Consumo de Combustible&#39;</span><span class="p">,</span> <span class="s1">&#39;MMBTU&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/1557a1b82d45e0cba96045deda6b263dbdc2e786ffd7acb238d9e8a4bf322681.png"><img alt="../../_images/1557a1b82d45e0cba96045deda6b263dbdc2e786ffd7acb238d9e8a4bf322681.png" src="../../_images/1557a1b82d45e0cba96045deda6b263dbdc2e786ffd7acb238d9e8a4bf322681.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="precio-bolsa-nacional-y-precio-de-escasez">
+<h3>Precio Bolsa Nacional y Precio de Escasez<a class="headerlink" href="#precio-bolsa-nacional-y-precio-de-escasez" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_time_series</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;precio_bolsa_sistema_daily&#39;</span><span class="p">,</span> <span class="s1">&#39;precio_escasez_sistema_daily&#39;</span><span class="p">],</span> <span class="s1">&#39;Precios de la Energía en Bolsa&#39;</span><span class="p">,</span> <span class="s1">&#39;COP/kWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/6fb093a13bede9c83a7e747a496c402d648ad7f169c0b5bf856dcf4db05a5dc5.png"><img alt="../../_images/6fb093a13bede9c83a7e747a496c402d648ad7f169c0b5bf856dcf4db05a5dc5.png" src="../../_images/6fb093a13bede9c83a7e747a496c402d648ad7f169c0b5bf856dcf4db05a5dc5.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+</section>
+<section id="analisis-de-series-temporales">
+<h2>Análisis de Series Temporales<a class="headerlink" href="#analisis-de-series-temporales" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Se observa una anomalía significativa en el Sistema Interconectado Nacional (SIN) durante el cuarto trimestre de 2015 y el primer trimestre de 2016, la cual será analizada en detalle más adelante.</p></li>
+<li><p>La generación y demanda actual muestran una tendencia ligeramente positiva a lo largo del intervalo de tiempo, con dos puntos donde la tendencia se invierte localmente: en el cambio de año 2015-2016 y a principios de 2020.</p></li>
+<li><p>La disponibilidad real presenta una tendencia levemente positiva de 2013 a 2018, con un marcado descenso en el cambio de año 2014-2015 y a finales de 2015. También se observa una inversión de la tendencia a levemente negativa desde 2018 hasta mediados de 2020.</p></li>
+<li><p>Los aportes de energía y el volumen útil muestran un comportamiento estacional claro, con mínimos de todo el perido analizado ubicado en 18/Abril/2024</p></li>
+<li><p>El precio parece seguir un comportamiento de series temporales estacionarias a lo largo del intervalo de tiempo analizado.</p></li>
+<li><p>Se evidencia una correlación entre las variables que afectan las emisiones, donde incluso las gráficas son muy similares en las características fuertemente correlacionadas. Se recomienda revisar la gráfica de Emisiones <span class="math notranslate nohighlight">\(CO_2eq\)</span>, Precio y Consumo de Combustible.</p></li>
+</ol>
+<section id="analisis-de-2010-a-principios-de-2015">
+<h3>Análisis de 2010 a principios de 2015<a class="headerlink" href="#analisis-de-2010-a-principios-de-2015" title="Link to this heading">#</a></h3>
+<p>Durante este período, se observaron tres importantes reducciones en la disponibilidad real, lo que provocó un aumento en el precio y las emisiones.</p>
+<p>La reducción en la disponibilidad puede elevar el precio debido a la menor cantidad de plantas de energía capaces de satisfacer la demanda del sistema, lo que resulta en una menor oferta y una demanda constante o creciente.</p>
+<p>Además, si la reducción en la disponibilidad se debe al fallo de una central hidroeléctrica, las centrales térmicas deben aumentar su generación a un costo más alto, lo que conlleva la producción de emisiones contaminantes.</p>
+</section>
+<section id="analisis-del-final-de-2015-e-inicios-de-2016">
+<h3>Análisis del final de 2015 e inicios de 2016<a class="headerlink" href="#analisis-del-final-de-2015-e-inicios-de-2016" title="Link to this heading">#</a></h3>
+<p>Este período es especialmente interesante ya que las variables muestran un comportamiento muy distinto entre octubre de 2015 y abril de 2016.</p>
+<p>Durante este lapso, se observaron varios máximos y mínimos en todo el intervalo temporal de 2013.10.01 a 2021.01.04:</p>
+<ul class="simple">
+<li><p>El pico más alto de emisiones.</p></li>
+<li><p>El mayor consumo de combustible fósil.</p></li>
+<li><p>El precio más elevado.</p></li>
+<li><p>Los menores aportes de energía (agua).</p></li>
+<li><p>La disponibilidad promedio más baja (para este análisis, se consideraron atípicos los valores mínimos de 2013 y 2014, excluyéndolos).</p></li>
+</ul>
+<p>Estas cifras difieren notablemente de los otros años debido a la intensidad del Fenómeno del Niño ocurrido en ese periodo.</p>
+<section id="principales-efectos-del-fenomeno-del-nino-en-el-sin">
+<h4>Principales efectos del Fenómeno del Niño en el SIN<a class="headerlink" href="#principales-efectos-del-fenomeno-del-nino-en-el-sin" title="Link to this heading">#</a></h4>
+<p>Las emisiones, el precio y el consumo de combustible se vieron fuertemente afectados, alcanzando valores máximos durante este período.</p>
+<p>Las razones detrás de este comportamiento incluyen:</p>
+<ul class="simple">
+<li><p>La declaración oficial del Fenómeno del Niño a principios de octubre generó especulaciones en el mercado.</p></li>
+<li><p>Varias centrales hidroeléctricas detuvieron o redujeron su operación para conservar agua, lo que llevó a que las centrales de gas natural y carbón operaran a máxima capacidad, aumentando así el consumo de combustibles fósiles más costosos.</p></li>
+<li><p>La estrategia de conservación de agua provocó una disminución en la disponibilidad promedio.</p></li>
+<li><p>Durante los primeros meses del Fenómeno del Niño (de octubre a diciembre), se observó un aumento en el volumen útil junto con una disminución en los aportes de agua, lo cual se explica por la estrategia de conservación de agua.</p></li>
+</ul>
+<p>A pesar de los altos precios y emisiones de <span class="math notranslate nohighlight">\(CO_2\)</span>, el sistema demostró su capacidad para gestionar este tipo de eventos, equilibrando la generación hidroeléctrica y térmica, y ejecutando una estrategia efectiva de ahorro energético sin necesidad de racionamientos.</p>
+</section>
+</section>
+<section id="analisis-del-ano-2020">
+<h3>Análisis del año 2020<a class="headerlink" href="#analisis-del-ano-2020" title="Link to this heading">#</a></h3>
+<p>El año 2020 fue especialmente desafiante debido a la pandemia de coronavirus, que tuvo un impacto sin precedentes en todo el mundo.</p>
+<p>A finales de marzo, Colombia implementó una cuarentena estricta que duró más de seis meses.</p>
+<p>Abril fue el mes más difícil, con muchas empresas deteniendo sus operaciones.</p>
+<p>Este parón económico se refleja claramente en la demanda y generación de energía durante este mes, lo que indica que el sector industrial es un gran consumidor de electricidad, incluso con la población en casa durante todo el día, el consumo residencial no pudo igualar el de la industria.</p>
+</section>
+</section>
+<section id="analisis-de-correlaciones">
+<h2>Análisis de Correlaciones<a class="headerlink" href="#analisis-de-correlaciones" title="Link to this heading">#</a></h2>
+<p>En esta sección usaremos el analisis de correlaciones para encontrar las variables que afectan las <strong>emisiones equivalentes de <span class="math notranslate nohighlight">\(CO_2\)</span></strong>.</p>
+<p>Como nuestros datos puede tener <em>outliers</em> usaremos el método de <strong>Spearman</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+<span class="n">corr_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>generacion_sistema_daily</th>
+      <th>generacion_ideal_sistema_daily</th>
+      <th>perdidas_sistema_daily</th>
+      <th>volumen_util_energia_sistema_daily</th>
+      <th>emisiones_sistema_daily</th>
+      <th>aportes_energia_sistema_daily</th>
+      <th>aportes_energia_mediaHist_sistema_daily</th>
+      <th>capacidad_util_energia_sistema_daily</th>
+      <th>demanda_real_sistema_daily</th>
+      <th>exportaciones_sistema_daily</th>
+      <th>importaciones_sistema_daily</th>
+      <th>precio_bolsa_sistema_daily</th>
+      <th>precio_escasez_sistema_daily</th>
+      <th>comsumo_combustible_daily</th>
+      <th>disponibilidad_real_daily</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>generacion_sistema_daily</th>
+      <td>1.000000</td>
+      <td>0.999768</td>
+      <td>0.461619</td>
+      <td>0.259800</td>
+      <td>0.646242</td>
+      <td>0.068179</td>
+      <td>0.313355</td>
+      <td>0.661634</td>
+      <td>0.995336</td>
+      <td>-0.004122</td>
+      <td>0.084868</td>
+      <td>0.418816</td>
+      <td>0.671560</td>
+      <td>0.224980</td>
+      <td>0.660278</td>
+    </tr>
+    <tr>
+      <th>generacion_ideal_sistema_daily</th>
+      <td>0.999768</td>
+      <td>1.000000</td>
+      <td>0.461464</td>
+      <td>0.258758</td>
+      <td>0.646845</td>
+      <td>0.069873</td>
+      <td>0.314386</td>
+      <td>0.664832</td>
+      <td>0.995822</td>
+      <td>-0.007202</td>
+      <td>0.092449</td>
+      <td>0.417140</td>
+      <td>0.670537</td>
+      <td>0.221190</td>
+      <td>0.662953</td>
+    </tr>
+    <tr>
+      <th>perdidas_sistema_daily</th>
+      <td>0.461619</td>
+      <td>0.461464</td>
+      <td>1.000000</td>
+      <td>0.332935</td>
+      <td>0.240055</td>
+      <td>0.194725</td>
+      <td>0.197856</td>
+      <td>0.294752</td>
+      <td>0.439333</td>
+      <td>0.226099</td>
+      <td>0.033179</td>
+      <td>0.012047</td>
+      <td>0.475243</td>
+      <td>-0.158628</td>
+      <td>0.303487</td>
+    </tr>
+    <tr>
+      <th>volumen_util_energia_sistema_daily</th>
+      <td>0.259800</td>
+      <td>0.258758</td>
+      <td>0.332935</td>
+      <td>1.000000</td>
+      <td>0.029644</td>
+      <td>0.347088</td>
+      <td>0.311453</td>
+      <td>0.251109</td>
+      <td>0.231766</td>
+      <td>0.130644</td>
+      <td>-0.206678</td>
+      <td>-0.149881</td>
+      <td>0.410333</td>
+      <td>-0.415372</td>
+      <td>0.299882</td>
+    </tr>
+    <tr>
+      <th>emisiones_sistema_daily</th>
+      <td>0.646242</td>
+      <td>0.646845</td>
+      <td>0.240055</td>
+      <td>0.029644</td>
+      <td>1.000000</td>
+      <td>-0.081158</td>
+      <td>0.144195</td>
+      <td>0.589859</td>
+      <td>0.676538</td>
+      <td>-0.098608</td>
+      <td>0.393408</td>
+      <td>0.457023</td>
+      <td>0.571034</td>
+      <td>0.379389</td>
+      <td>0.633677</td>
+    </tr>
+    <tr>
+      <th>aportes_energia_sistema_daily</th>
+      <td>0.068179</td>
+      <td>0.069873</td>
+      <td>0.194725</td>
+      <td>0.347088</td>
+      <td>-0.081158</td>
+      <td>1.000000</td>
+      <td>0.550461</td>
+      <td>0.162061</td>
+      <td>0.060139</td>
+      <td>0.026345</td>
+      <td>-0.033132</td>
+      <td>-0.288118</td>
+      <td>0.232550</td>
+      <td>-0.486544</td>
+      <td>0.163032</td>
+    </tr>
+    <tr>
+      <th>aportes_energia_mediaHist_sistema_daily</th>
+      <td>0.313355</td>
+      <td>0.314386</td>
+      <td>0.197856</td>
+      <td>0.311453</td>
+      <td>0.144195</td>
+      <td>0.550461</td>
+      <td>1.000000</td>
+      <td>0.358945</td>
+      <td>0.315293</td>
+      <td>-0.087698</td>
+      <td>0.076781</td>
+      <td>0.071987</td>
+      <td>0.264394</td>
+      <td>-0.181656</td>
+      <td>0.337325</td>
+    </tr>
+    <tr>
+      <th>capacidad_util_energia_sistema_daily</th>
+      <td>0.661634</td>
+      <td>0.664832</td>
+      <td>0.294752</td>
+      <td>0.251109</td>
+      <td>0.589859</td>
+      <td>0.162061</td>
+      <td>0.358945</td>
+      <td>1.000000</td>
+      <td>0.680469</td>
+      <td>-0.238490</td>
+      <td>0.286276</td>
+      <td>0.326368</td>
+      <td>0.476325</td>
+      <td>0.031178</td>
+      <td>0.746224</td>
+    </tr>
+    <tr>
+      <th>demanda_real_sistema_daily</th>
+      <td>0.995336</td>
+      <td>0.995822</td>
+      <td>0.439333</td>
+      <td>0.231766</td>
+      <td>0.676538</td>
+      <td>0.060139</td>
+      <td>0.315293</td>
+      <td>0.680469</td>
+      <td>1.000000</td>
+      <td>-0.034404</td>
+      <td>0.178048</td>
+      <td>0.429897</td>
+      <td>0.662346</td>
+      <td>0.236426</td>
+      <td>0.674758</td>
+    </tr>
+    <tr>
+      <th>exportaciones_sistema_daily</th>
+      <td>-0.004122</td>
+      <td>-0.007202</td>
+      <td>0.226099</td>
+      <td>0.130644</td>
+      <td>-0.098608</td>
+      <td>0.026345</td>
+      <td>-0.087698</td>
+      <td>-0.238490</td>
+      <td>-0.034404</td>
+      <td>1.000000</td>
+      <td>-0.262095</td>
+      <td>0.016736</td>
+      <td>0.066092</td>
+      <td>0.007928</td>
+      <td>-0.210137</td>
+    </tr>
+    <tr>
+      <th>importaciones_sistema_daily</th>
+      <td>0.084868</td>
+      <td>0.092449</td>
+      <td>0.033179</td>
+      <td>-0.206678</td>
+      <td>0.393408</td>
+      <td>-0.033132</td>
+      <td>0.076781</td>
+      <td>0.286276</td>
+      <td>0.178048</td>
+      <td>-0.262095</td>
+      <td>1.000000</td>
+      <td>0.126140</td>
+      <td>0.036039</td>
+      <td>0.082509</td>
+      <td>0.242287</td>
+    </tr>
+    <tr>
+      <th>precio_bolsa_sistema_daily</th>
+      <td>0.418816</td>
+      <td>0.417140</td>
+      <td>0.012047</td>
+      <td>-0.149881</td>
+      <td>0.457023</td>
+      <td>-0.288118</td>
+      <td>0.071987</td>
+      <td>0.326368</td>
+      <td>0.429897</td>
+      <td>0.016736</td>
+      <td>0.126140</td>
+      <td>1.000000</td>
+      <td>0.239591</td>
+      <td>0.762075</td>
+      <td>0.137902</td>
+    </tr>
+    <tr>
+      <th>precio_escasez_sistema_daily</th>
+      <td>0.671560</td>
+      <td>0.670537</td>
+      <td>0.475243</td>
+      <td>0.410333</td>
+      <td>0.571034</td>
+      <td>0.232550</td>
+      <td>0.264394</td>
+      <td>0.476325</td>
+      <td>0.662346</td>
+      <td>0.066092</td>
+      <td>0.036039</td>
+      <td>0.239591</td>
+      <td>1.000000</td>
+      <td>0.003447</td>
+      <td>0.608665</td>
+    </tr>
+    <tr>
+      <th>comsumo_combustible_daily</th>
+      <td>0.224980</td>
+      <td>0.221190</td>
+      <td>-0.158628</td>
+      <td>-0.415372</td>
+      <td>0.379389</td>
+      <td>-0.486544</td>
+      <td>-0.181656</td>
+      <td>0.031178</td>
+      <td>0.236426</td>
+      <td>0.007928</td>
+      <td>0.082509</td>
+      <td>0.762075</td>
+      <td>0.003447</td>
+      <td>1.000000</td>
+      <td>-0.055005</td>
+    </tr>
+    <tr>
+      <th>disponibilidad_real_daily</th>
+      <td>0.660278</td>
+      <td>0.662953</td>
+      <td>0.303487</td>
+      <td>0.299882</td>
+      <td>0.633677</td>
+      <td>0.163032</td>
+      <td>0.337325</td>
+      <td>0.746224</td>
+      <td>0.674758</td>
+      <td>-0.210137</td>
+      <td>0.242287</td>
+      <td>0.137902</td>
+      <td>0.608665</td>
+      <td>-0.055005</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heatmap de Coeficientes de Correlación&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/bffc4847c7c42a991119e6294da722608637faca018e2f5b7f4d398e21ea0c6a.png"><img alt="../../_images/bffc4847c7c42a991119e6294da722608637faca018e2f5b7f4d398e21ea0c6a.png" src="../../_images/bffc4847c7c42a991119e6294da722608637faca018e2f5b7f4d398e21ea0c6a.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;precio_bolsa_sistema_daily&#39;</span><span class="p">]</span>
+
+<span class="n">x_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;generacion_sistema_daily&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;generacion_ideal_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;perdidas_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;volumen_util_energia_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;emisiones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;aportes_energia_sistema_daily&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="n">y_vars</span><span class="o">=</span><span class="n">y_vars</span><span class="p">,</span> <span class="n">x_vars</span><span class="o">=</span><span class="n">x_vars</span><span class="p">)</span>
+<span class="n">x_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;aportes_energia_mediaHist_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;capacidad_util_energia_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;demanda_real_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;exportaciones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;importaciones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;precio_escasez_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;comsumo_combustible_daily&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="n">y_vars</span><span class="o">=</span><span class="n">y_vars</span><span class="p">,</span> <span class="n">x_vars</span><span class="o">=</span><span class="n">x_vars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x320407ad0&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/34373933d720bc09f62f317d899006310e2fe44e598b131e936a80fa9272ed7a.png"><img alt="../../_images/34373933d720bc09f62f317d899006310e2fe44e598b131e936a80fa9272ed7a.png" src="../../_images/34373933d720bc09f62f317d899006310e2fe44e598b131e936a80fa9272ed7a.png" style="width: 662px; height: 659px;" /></a>
+<a class="reference internal image-reference" href="../../_images/2f07994da8fad9b293509b0d6bdc830f1c9d2501abb7225c1d23fb94a4588301.png"><img alt="../../_images/2f07994da8fad9b293509b0d6bdc830f1c9d2501abb7225c1d23fb94a4588301.png" src="../../_images/2f07994da8fad9b293509b0d6bdc830f1c9d2501abb7225c1d23fb94a4588301.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+</section>
+<section id="seleccion-de-variables">
+<h2>Seleccion de Variables<a class="headerlink" href="#seleccion-de-variables" title="Link to this heading">#</a></h2>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">generacion_ideal_sistema_daily</span></code> es casi idéntica a <code class="docutils literal notranslate"><span class="pre">generacion_sistema_daily</span></code>. Esto se debe a que la definición de generación ideal se basa en contar la energía sin tener en cuenta las pérdidas por transporte. Dado que ambas variables contienen prácticamente la misma información, se puede eliminar una de ellas. Eliminaremos <code class="docutils literal notranslate"><span class="pre">generacion_ideal_sistema_daily</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span> <span class="o">=</span> <span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;generacion_ideal_sistema_daily&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;generacion_sistema_daily&#39;, &#39;perdidas_sistema_daily&#39;,
+       &#39;volumen_util_energia_sistema_daily&#39;, &#39;emisiones_sistema_daily&#39;,
+       &#39;aportes_energia_sistema_daily&#39;,
+       &#39;aportes_energia_mediaHist_sistema_daily&#39;,
+       &#39;capacidad_util_energia_sistema_daily&#39;, &#39;demanda_real_sistema_daily&#39;,
+       &#39;exportaciones_sistema_daily&#39;, &#39;importaciones_sistema_daily&#39;,
+       &#39;precio_bolsa_sistema_daily&#39;, &#39;precio_escasez_sistema_daily&#39;,
+       &#39;comsumo_combustible_daily&#39;, &#39;disponibilidad_real_daily&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las variables <code class="docutils literal notranslate"><span class="pre">aportes_energia_mediaHist_sistema_daily</span></code>, <code class="docutils literal notranslate"><span class="pre">capacidad_util_energia_sistema_daily</span></code> y <code class="docutils literal notranslate"><span class="pre">precio_escasez_sistema_daily</span></code> son variables de diseño del sistema o  que se definen como referencia para toma de desiciones y no depende de la variabilidad de la operación horaria del sistema. Por lo tanto las eliminaremos de este analisis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span> <span class="o">=</span> <span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;aportes_energia_mediaHist_sistema_daily&#39;</span><span class="p">,</span> 
+                                                                     <span class="s1">&#39;capacidad_util_energia_sistema_daily&#39;</span><span class="p">,</span> 
+                                                                     <span class="s1">&#39;precio_escasez_sistema_daily&#39;</span><span class="p">],</span> 
+                                                                     <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;generacion_sistema_daily&#39;, &#39;perdidas_sistema_daily&#39;,
+       &#39;volumen_util_energia_sistema_daily&#39;, &#39;emisiones_sistema_daily&#39;,
+       &#39;aportes_energia_sistema_daily&#39;, &#39;demanda_real_sistema_daily&#39;,
+       &#39;exportaciones_sistema_daily&#39;, &#39;importaciones_sistema_daily&#39;,
+       &#39;precio_bolsa_sistema_daily&#39;, &#39;comsumo_combustible_daily&#39;,
+       &#39;disponibilidad_real_daily&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;precio_bolsa_sistema_daily&#39;</span><span class="p">]</span>
+
+<span class="n">x_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;generacion_sistema_daily&#39;</span><span class="p">,</span> 
+
+          <span class="s1">&#39;perdidas_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;volumen_util_energia_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;emisiones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;aportes_energia_sistema_daily&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="n">y_vars</span><span class="o">=</span><span class="n">y_vars</span><span class="p">,</span> <span class="n">x_vars</span><span class="o">=</span><span class="n">x_vars</span><span class="p">)</span>
+<span class="n">x_vars</span> <span class="o">=</span> <span class="p">[</span>
+
+          <span class="s1">&#39;demanda_real_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;exportaciones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;importaciones_sistema_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;comsumo_combustible_daily&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;disponibilidad_real_daily&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_sistema_electrico_converted</span><span class="p">,</span> <span class="n">y_vars</span><span class="o">=</span><span class="n">y_vars</span><span class="p">,</span> <span class="n">x_vars</span><span class="o">=</span><span class="n">x_vars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x320700190&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/493034ee8df8a9b84796e67c1021f17a7bdde44be28b76340ca0d5a6e64abccc.png"><img alt="../../_images/493034ee8df8a9b84796e67c1021f17a7bdde44be28b76340ca0d5a6e64abccc.png" src="../../_images/493034ee8df8a9b84796e67c1021f17a7bdde44be28b76340ca0d5a6e64abccc.png" style="width: 662px; height: 659px;" /></a>
+<a class="reference internal image-reference" href="../../_images/0f24195adac7b7f0a8c160ab02f5745a94599983db8e6c6bdb9d370aca2d6f8f.png"><img alt="../../_images/0f24195adac7b7f0a8c160ab02f5745a94599983db8e6c6bdb9d370aca2d6f8f.png" src="../../_images/0f24195adac7b7f0a8c160ab02f5745a94599983db8e6c6bdb9d370aca2d6f8f.png" style="width: 662px; height: 659px;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sistema_electrico_converted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;./data/df_sistema_electrico_ML.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jero2760/jupyter-book-ejemplo",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./transform-EDA-main/transform-EDA-main"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conexion-a-la-base-de-datos-de-analitica-en-aws">Conexión a la Base de Datos de Analítica en AWS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-dataset-de-analitica">Lectura del DataSet de Analítica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploracion-del-dataset-y-sus-variables">Exploración del Dataset y sus Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-las-variables">Descripción de las Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-unidades-a-las-unidades-de-analisis">Conversion de Unidades a las Unidades de Análisis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadistica-descriptiva">Estadistica Descriptiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticos-del-dataset">Estadisticos del Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-las-distribuiciones-de-las-variables">Visualización de las distribuiciones de las variables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-series-de-tiempo">Visualizacion de Series de Tiempo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-de-energia">Variables de Energía</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-y-demanda">Generación y Demanda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perdidas-de-energia-del-sistema">Perdidas de Energía del Sistema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aportes-de-energia-por-lluvia-vs-media-historica-de-aportes">Aportes de Energía por Lluvia vs Media Historica de Aportes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-y-volumen-util-del-sistema">Capacidad y Volumen Util del Sistema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disponibilidad-real">Disponibilidad Real</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consumo-de-combustible-de-las-plantas-termicas">Consumo de Combustible de las Plantas Térmicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precio-bolsa-nacional-y-precio-de-escasez">Precio Bolsa Nacional y Precio de Escasez</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-series-temporales">Análisis de Series Temporales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-2010-a-principios-de-2015">Análisis de 2010 a principios de 2015</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-final-de-2015-e-inicios-de-2016">Análisis del final de 2015 e inicios de 2016</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-efectos-del-fenomeno-del-nino-en-el-sin">Principales efectos del Fenómeno del Niño en el SIN</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-del-ano-2020">Análisis del año 2020</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-correlaciones">Análisis de Correlaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables">Seleccion de Variables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Julián Andrés Santos Méndez, Juan Felipe Sepulveda Mantilla, Julian Obando Scarpetta, Luz Edilsa Ortiz López.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2024 BigData. Todos los derechos reservados..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

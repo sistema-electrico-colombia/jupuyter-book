@@ -1,0 +1,30 @@
+format: jb-book
+root: docs/chapter0/root
+parts:
+- caption: Inicio
+  numbered: true
+  chapters:
+  - file: docs/chapter0/Inicio
+  - file: docs/chapter1/Contexto
+- caption: Flujo de trabajo
+  numbered: true
+  chapters:
+  - file: docs/chapter2/DiagramaProcesoETL
+  - file: docs/chapter2/extraccion_datos_api_xm
+  - file: docs/chapter2/CargaBaseDatosDigitalOcean
+  - file: docs/chapter2/transformaciones_analitica
+  - file: docs/chapter2/exploratory_data_analysis
+  - file: docs/chapter2/ProcesoAlmacenamientoAWS
+  - file: docs/chapter2/machine_learning_supervisado
+  - file: docs/chapter2/machine_learning_no_supervisado
+  - file: docs/chapter2/Creacion_dashboard
+  
+- caption: Conclusiones y referencias
+  numbered: true
+  chapters:
+  - file: docs/chapter3/Conclusiones
+  - file: docs/chapter4/Bibliografia
+- caption: Índice
+  numbered: true
+  chapters:
+    - file: Drupo Big Data

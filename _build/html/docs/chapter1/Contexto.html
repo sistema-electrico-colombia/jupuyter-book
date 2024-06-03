@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Contexto &#8212; Presentación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=7f8ff830"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/chapter1/Contexto';</script>
+    <link rel="canonical" href="https://publiconsulting.com/docs/chapter1/Contexto.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Detalle del procedimiento Extracción - Transformación - Carga (ETL)" href="../chapter2/DiagramaProcesoETL.html" />
+    <link rel="prev" title="1. Presentación" href="../chapter0/Inicio.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../chapter0/root.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Presentación - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Presentación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inicio</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Inicio.html">1. Presentación</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Contexto</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Flujo de trabajo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/DiagramaProcesoETL.html">3. Detalle del procedimiento Extracción - Transformación - Carga (ETL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/extraccion_datos_api_xm.html">4. Extracción de datos de la REST API de XM S.A. E.S.P.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/CargaBaseDatosDigitalOcean.html">5. Proceso Carga base de datos en nube DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/transformaciones_analitica.html">6. Transformación de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/exploratory_data_analysis.html">7. Analisis Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/ProcesoAlmacenamientoAWS.html">8. Carga de información base de datos AWS.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/machine_learning_supervisado.html">9. Machine Learning Supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/machine_learning_no_supervisado.html">10. Machine Learning No Supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter2/Creacion_dashboard.html">11. Creación de dashboard</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conclusiones y referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter3/Conclusiones.html">12. Conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter4/Bibliografia.html">13. Referencias</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Jero2760/jupyter-book-ejemplo/master?urlpath=tree/docs/docs/chapter1/Contexto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Jero2760/jupyter-book-ejemplo/blob/master/docs/docs/chapter1/Contexto.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/edit/master/docs/docs/chapter1/Contexto.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/issues/new?title=Issue%20on%20page%20%2Fdocs/chapter1/Contexto.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/chapter1/Contexto.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contexto</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-problema">2.1. Definición del problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situacion-actual">2.2. Situación actual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario">2.3. Glosario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial">2.4. El suministro de energía como factor crítico en la industria pesada: optimización mediante Inteligencia Artificial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-aplica-la-ia-para-la-optimizacion-energetica">2.4.1. ¿Cómo se aplica la IA para la optimización energética?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">2.4.2. Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">2.5. Incorporación de conocimiento humano en sensores virtuales para la industria pesada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-fugas">2.6. Detección de fugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digitalizacion-de-documentos-de-ingenieria">2.7. Digitalización de Documentos de Ingeniería</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="contexto">
+<h1><span class="section-number">2. </span>Contexto<a class="headerlink" href="#contexto" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="definicion-del-problema">
+<h2><span class="section-number">2.1. </span>Definición del problema<a class="headerlink" href="#definicion-del-problema" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>El Sistema Interconectado Nacional (SIN) de Colombia es una infraestructura crítica para el desarrollo económico y social del país. Su correcto funcionamiento depende de la comprensión profunda de su dinámica y los factores que influyen en su comportamiento, especialmente en lo que respecta al precio de la energía eléctrica.</p>
+<p>Sin embargo, existe una brecha significativa en el conocimiento actual sobre el comportamiento del precio en el SIN. Si bien se dispone de datos masivos sobre el sistema, estos no han sido analizados de manera integral para identificar patrones, tendencias y relaciones causales entre las variables relevantes.</p>
+<p>Esta falta de comprensión dificulta la toma de decisiones informadas por parte de las autoridades y actores del sector energético, lo que puede llevar a ineficiencias, inestabilidad y altos costos en el sistema eléctrico.</p>
+<p>Específicamente, se presentan las siguientes problemáticas:</p>
+<ul class="simple">
+<li><p>Falta de comprensión del comportamiento general del precio de la electricidad en el SIN: No se conocen con precisión los patrones y tendencias que caracterizan el precio, ni los factores que lo determinan en el corto, mediano y largo plazo.</p></li>
+<li><p>Desconocimiento de la correlación entre el precio y otras variables del sistema de generación: Se desconoce la relación que existe entre el precio de la electricidad y variables como la oferta, la demanda, la capacidad de generación y la participación de las diferentes fuentes energéticas.</p></li>
+<li><p>Incertidumbre sobre la influencia de los fenómenos climáticos en el precio del SIN: No se ha evaluado el impacto de variables climáticas, como la precipitación, la temperatura y la radiación solar, en el comportamiento del precio de la energía eléctrica.</p></li>
+<li><p>Falta de conocimiento sobre la relación entre el consumo de combustible y el precio de la electricidad: No se ha analizado en profundidad la relación entre el consumo de combustibles fósiles, como el carbón y el gas natural, y el precio de la electricidad en el SIN.</p></li>
+</ul>
+<p>Estas problemáticas generan las siguientes consecuencias:</p>
+<ul class="simple">
+<li><p>Ineficiencias en la operación del SIN: La falta de comprensión del comportamiento del precio dificulta la toma de decisiones óptimas para la gestión del sistema, lo que puede llevar a un uso ineficiente de los recursos y a un aumento de los costos.</p></li>
+<li><p>Inestabilidad en el mercado eléctrico: La incertidumbre sobre los factores que determinan el precio puede generar inestabilidad en el mercado, afectando a los consumidores, los generadores y las empresas comercializadoras de energía.</p></li>
+<li><p>Dificultades para la planeación del sistema eléctrico: La falta de conocimiento sobre el comportamiento futuro del precio dificulta la planeación a largo plazo del sistema eléctrico, lo que puede llevar a inversiones inadecuadas o a la falta de capacidad para atender la demanda futura.</p></li>
+</ul>
+</section>
+<section id="situacion-actual">
+<h2><span class="section-number">2.2. </span>Situación actual<a class="headerlink" href="#situacion-actual" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Colombia es un país que se enorgullese de que el 69.25% de su energía eléctrica es generada con recursos renovables, los cuales constituyen una matriz energetica no fósil muy variada con diferentes fuentes, tales como la energía hidráulica, la biomasa, la energía eólica y la energía solar, sin embargo, el 98.5% de esa energía es generada con recursos hidráulicos a gran escala.</p>
+<p>Como consecuencia de esa depedencia a los grandes embalses, se tiene un sistema eléctrico que es muy sensible a fenomenos climáticos como el fenomeno del niño.</p>
+<p><em>Tabla 1. Capacidad efectiva neta del Sistema Interconectado Nacional (SIN) por tipo de recurso natural, Fuente: Informe 2019 XM S.A. E.S.P. [1]</em></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fuente de energía</p></th>
+<th class="head"><p>2018 MW</p></th>
+<th class="head"><p>2019 MW</p></th>
+<th class="head"><p>Participación (%)</p></th>
+<th class="head"><p>Variación 2019 vs. 2018</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Fuentes de energía No Renovable</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Combustible fósil</p></td>
+<td><p>5,308.14</p></td>
+<td><p>5,369.74</p></td>
+<td><p>30.75%</p></td>
+<td><p>1.16%</p></td>
+</tr>
+<tr class="row-even"><td><p>Total No Renovable</p></td>
+<td><p>5,308.14</p></td>
+<td><p>5,369.74</p></td>
+<td><p>30.75%</p></td>
+<td><p>1.16%</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Fuentes de energía Renovable</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Biomasa</p></td>
+<td><p>139.60</p></td>
+<td><p>139.60</p></td>
+<td><p>0.80%</p></td>
+<td><p>0.00%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eólica</p></td>
+<td><p>18.42</p></td>
+<td><p>18.42</p></td>
+<td><p>0.11%</p></td>
+<td><p>0.00%</p></td>
+</tr>
+<tr class="row-even"><td><p>Hidráulica</p></td>
+<td><p>11,836.57</p></td>
+<td><p>11,916.61</p></td>
+<td><p>68.24%</p></td>
+<td><p>0.68%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solar</p></td>
+<td><p>9.80</p></td>
+<td><p>17.98</p></td>
+<td><p>0.10%</p></td>
+<td><p>83.43%</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total Renovable</strong></p></td>
+<td><p><strong>12,004.39</strong></p></td>
+<td><p><strong>12,092.60</strong></p></td>
+<td><p><strong>69.25%</strong></p></td>
+<td><p><strong>0.73%</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total general</strong></p></td>
+<td><p><strong>17,312.53</strong></p></td>
+<td><p><strong>17,462.34</strong></p></td>
+<td><p><strong>100.00%</strong></p></td>
+<td><p><strong>0.87%</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para contrarrestar esa dependecia a la energía hidráulica, el país inició el proceso de incoporación de mas activos de generacion térmica con combustibles fósiles.</p>
+<p>Es por esta razón que <strong>el objetivo</strong> principal de este proyecto es hacer un seguimiento del sistema eléctrico Colombiano y determinar su relacion con otras variables del sistema, para así tener una base con la cual analizar en el futuro las emisiones de los nuevos activos térmicos.</p>
+</section>
+<section id="glosario">
+<h2><span class="section-number">2.3. </span>Glosario<a class="headerlink" href="#glosario" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>XM S.A. E.S.P.</strong>: Es una empresa que pertenece al grupo ISA, se encarga de la administración del mercado mayorista de electricidad de Colombia, también opera el Sistema Interconectado Nacional, integrando así, sus recursos de generación, interconexión y transmisión de energía eléctrica.[3]</p></li>
+<li><p><strong>Emisiones Contaminantes</strong>: Es la descarga de fluidos gaseosos, puros o con sustancias en suspensión que sean residuos de la actividad humana o de la naturaleza y que causan efectos adversos en la atmósfera de la tierra, como lo es el efecto invernadero o lluvia ácida.</p></li>
+<li><p><span class="math notranslate nohighlight">\(CO_{2}\)</span>: Dioxido de carbon, gas contaminante de la atmosfera el cual produce efecto invernadero.</p></li>
+<li><p><span class="math notranslate nohighlight">\(CH_{4}\)</span>: Metano, gas contaminante de la atmosfera, el cual produce efecto invernadero con un potencial de calentamiento global 21 veces mayor que el <span class="math notranslate nohighlight">\(CO_{2}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_{2}O\)</span>: Oxido Nitroso, gas contaminante de la atmosfera, el cual produce efecto invernadero con un potencial de calentamiento global 310 veces mayor que el <span class="math notranslate nohighlight">\(CO_{2}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(CO_{2 eq}\)</span>: Emisiones de un gas equivalentes a <span class="math notranslate nohighlight">\(CO_{2}\)</span>, se calcula con la siguiente formula <span class="math notranslate nohighlight">\(Ton CO_{2 eq} = (TonGas) (GWP)\)</span>, donde GWP es el potencial de calentamiento global.</p></li>
+</ul>
+</section>
+<section id="el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial">
+<h2><span class="section-number">2.4. </span>El suministro de energía como factor crítico en la industria pesada: optimización mediante Inteligencia Artificial<a class="headerlink" href="#el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>El suministro de energía constituye un factor fundamental en el sector de la industria pesada, ya que alimenta las unidades de proceso y las operaciones, siendo indispensable para su correcto funcionamiento (American Society of Mechanical Engineers, 2019). En este sentido, las empresas del sector deben garantizar un flujo de energía entrante al mínimo costo posible, lo cual representa un desafío complejo (International Energy Agency, 2021).</p>
+<p>De hecho, la energía se puede considerar como la “materia prima” más importante en la industria pesada, debido a su impacto significativo en los procesos productivos. Sin embargo, su elevado costo representa un obstáculo considerable para las empresas (U.S. Energy Information Administration, 2023).</p>
+<p>Por consiguiente, la optimización del consumo de energía se convierte en una prioridad para las empresas del sector, lo que se traduce en la reducción del consumo de recursos como el petróleo, el carbono, el gas natural y la electricidad (Rodríguez-Rodríguez &amp; Florido-Arévalo, 2020). Adicionalmente, existe una relación directa entre el consumo de energía y las emisiones de efecto invernadero, por lo que una disminución en el primero conlleva una reducción proporcional en las segundas (Intergovernmental Panel on Climate Change, 2021).</p>
+<p>En este contexto, la Inteligencia Artificial (IA) emerge como una herramienta de gran potencial para optimizar el consumo de energía en la industria pesada. La aplicación de modelos de IA permite analizar patrones de consumo, identificar áreas de mejora y desarrollar estrategias eficientes para la gestión energética (European Commission, 2023).</p>
+<section id="como-se-aplica-la-ia-para-la-optimizacion-energetica">
+<h3><span class="section-number">2.4.1. </span>¿Cómo se aplica la IA para la optimización energética?<a class="headerlink" href="#como-se-aplica-la-ia-para-la-optimizacion-energetica" title="Link to this heading">#</a></h3>
+<p>Para modelar este problema es necesario disponer de datos sobre el consumo de energía durante muchos años, por supuesto, si es posible. Sin embargo, la serie temporal de energía utilizada no es suficiente, se necesita otro tipo de datos para tener un buen modelo que optimice la energía en toda la instalación.</p>
+<p>Ese tipo de datos es el flujo de energía dentro de la planta, que en palabras simples representa cómo las unidades de proceso intercambian energía entre ellas y el medio ambiente. Por ejemplo, en la simulación de un proceso de limpieza de CO2 y H2S de gas natural, tiene varias unidades de proceso (máquinas) que intercambian materiales y energía entre ellas mediante tuberías para eliminar CO2 y H2S del gas natural crudo. En este proceso es necesario consumir calor para el rehervidor del regenerador y electricidad o aire comprimido para las bombas y la instrumentación.
+Por lo tanto, con los flujos de energía del proceso y los datos históricos, es posible entrenar una red neuronal profunda para encontrar puntos de optimización, patrones de flujo de energía u optimizar los parámetros del proceso para reducir el uso de energía sin comprometer la productividad del proceso.</p>
+</section>
+<section id="determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">
+<h3><span class="section-number">2.4.2. </span>Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales<a class="headerlink" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales" title="Link to this heading">#</a></h3>
+<p>Todo proceso industrial pesado debe monitorear todos sus parámetros como temperatura, presión, flujo volumétrico, concentración, etc. Para algunos casos, como las refinerías de petróleo, es muy fácil calcular estos parámetros sin medir. Sin embargo, en la mayoría de los casos, esto no es una tarea fácil. En industrias como la biotecnológica-farmacéutica, la alimentaria, la siderúrgica, la del plástico y muchas otras, es muy difícil crear modelos fisicoquímicos capaces de calcular los parámetros del proceso. Por ello, las técnicas de Inteligencia Artificial y Deep Learning vienen a hacer eso, estimar parámetros de proceso en base a datos históricos funcionando como sensores virtuales .</p>
+<p>Para los operadores e ingenieros, poder conocer un parámetro sin una medición real es muy poderoso, pueden trabajar con confianza cuando falla un sensor físico o pueden realizar una medición virtual cuando no hay un sensor físico presente.</p>
+</section>
+</section>
+<section id="incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">
+<h2><span class="section-number">2.5. </span>Incorporación de conocimiento humano en sensores virtuales para la industria pesada<a class="headerlink" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada" title="Link to this heading">#</a></h2>
+<p>La creación de sensores virtuales en la industria pesada requiere del entrenamiento de modelos con todas las variables operativas relevantes. Sin embargo, este enfoque puede ir más allá al incorporar conocimiento humano adicional, como la experiencia específica de los operadores y su conocimiento tácito durante el proceso.</p>
+<p>La integración de estas características humanas en los modelos de sensores virtuales ofrece diversos beneficios. En primer lugar, permite una mejor comprensión del proceso, ya que no solo se limita a datos cuantitativos sino que también incorpora el conocimiento tácito y la intuición de los expertos.</p>
+<p>En segundo lugar, facilita el relevo generacional en la industria, especialmente en procesos complejos como la fabricación de cemento, la refinación de petróleo o la producción a gran escala. Al capturar y preservar el conocimiento de los operadores experimentados, se asegura la continuidad del conocimiento y la experiencia en el tiempo, incluso cuando los expertos se retiran.</p>
+<p>En resumen, la incorporación de conocimiento humano en los sensores virtuales representa un avance significativo en la industria pesada. Permite una mejor comprensión de los procesos, facilita el relevo generacional y, en última instancia, contribuye a mejorar la eficiencia, la seguridad y la calidad de la producción.</p>
+</section>
+<section id="deteccion-de-fugas">
+<h2><span class="section-number">2.6. </span>Detección de fugas<a class="headerlink" href="#deteccion-de-fugas" title="Link to this heading">#</a></h2>
+<p>Los derrames son un problema común que puede ocurrir en cualquier industria que procese líquidos. Si la planta es muy grande, hay varios lugares donde no hay supervisión humana. Aquí es donde los modelos de aprendizaje profundo de visión por computadora pueden ayudar a la industria. Por lo tanto, instalar cámaras no supervisadas es una inversión relativamente barata, conectarlas a un sistema mediante un algoritmo de aprendizaje profundo entrenado para detectar fugas de líquido y enviar una alarma, es aún más fácil.</p>
+<p>Sin embargo, la parte difícil es tener un conjunto de datos muy bueno para entrenar la red neuronal profunda. Una de las razones es que es obligatorio tener imágenes del líquido real que procesa la empresa. Empresas como <a class="reference external" href="http://Landing.AI">Landing.AI</a> están trabajando para superar estas dificultades y ofrecer buenos modelos a la industria.</p>
+</section>
+<section id="digitalizacion-de-documentos-de-ingenieria">
+<h2><span class="section-number">2.7. </span>Digitalización de Documentos de Ingeniería<a class="headerlink" href="#digitalizacion-de-documentos-de-ingenieria" title="Link to this heading">#</a></h2>
+<p>Antes de su construcción, toda planta de proceso de industria pesada debe ejecutar todo el proceso de ingeniería, que consta de tres pasos globales, ingeniería Conceptual, ingeniería básica e ingeniería de detalle. Durante estos pasos, los ingenieros generan muchos documentos como diagramas, listas de equipos, listas de instrumentación, dibujos y muchos otros. Estos documentos son obligatorios para tener toda la información necesaria para construir las instalaciones diseñadas por el contratista constructor.</p>
+<p>En ocasiones es necesario realizar cambios o mejoras a una planta que ya está en funcionamiento, y generalmente los documentos no están completos o incluso no digitalizados, este tipo de proyectos se denominan proyectos Brownfield. Entonces, las empresas de industrias pesadas contratan una empresa de ingeniería para digitalizar los documentos, luego la empresa de ingeniería contrata a muchos ingenieros jóvenes para realizar la tarea manualmente, gastando mucho dinero y tiempo en una tarea que se puede realizar utilizando visión por computadora. Puede parecer trivial, pero una herramienta para optimizar estas tareas es muy valiosa en las empresas de ingeniería.</p>
+<p>Por ello, existen empresas que ofrecen herramientas para digitalizar diagramas de procesos e instrumentación (P&amp;ID) utilizando visión por computadora con modelos de aprendizaje profundo muy bien entrenados y sintonizados para detectar símbolos y texto, los datos ya extraídos podrían exportarse a PDF o CSV para ser procesados ​​en otros software.</p>
+<p>Estos son algunos ejemplos de cómo se podría utilizar la IA para mejorar las operaciones industriales pesadas. Para que pueda tener una comprensión más amplia de los usos en el mundo real de esta increíble tecnología.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jero2760/jupyter-book-ejemplo",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter0/Inicio.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Presentación</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../chapter2/DiagramaProcesoETL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Detalle del procedimiento Extracción - Transformación - Carga (ETL)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-del-problema">2.1. Definición del problema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#situacion-actual">2.2. Situación actual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glosario">2.3. Glosario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-suministro-de-energia-como-factor-critico-en-la-industria-pesada-optimizacion-mediante-inteligencia-artificial">2.4. El suministro de energía como factor crítico en la industria pesada: optimización mediante Inteligencia Artificial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-aplica-la-ia-para-la-optimizacion-energetica">2.4.1. ¿Cómo se aplica la IA para la optimización energética?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-parametros-de-proceso-sensores-virtuales-gemelos-digitales">2.4.2. Determinación de parámetros de proceso: Sensores Virtuales - Gemelos Digitales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporacion-de-conocimiento-humano-en-sensores-virtuales-para-la-industria-pesada">2.5. Incorporación de conocimiento humano en sensores virtuales para la industria pesada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-fugas">2.6. Detección de fugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digitalizacion-de-documentos-de-ingenieria">2.7. Digitalización de Documentos de Ingeniería</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Julián Andrés Santos Méndez, Juan Felipe Sepulveda Mantilla, Julian Obando Scarpetta, Luz Edilsa Ortiz López.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2024 BigData. Todos los derechos reservados..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
