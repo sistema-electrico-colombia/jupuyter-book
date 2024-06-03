@@ -22,8 +22,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/Jero2760/jupyter-book-ejemplo
-  branch: master
+  url: https://github.com/sistema-electrico-colombia/jupyter-book
+  branch: main
   path_to_book: "docs"
 
 launch_buttons:
