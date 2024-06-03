@@ -495,7 +495,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-la-informacion">12.2. Transformación de la información</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-la-informacion">12.3. Carga de la información</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning">12.4. Conclusiones de Machine Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning-supervisado">12.4. Conclusiones de Machine Learning Supervisado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-machine-learning-no-supervisado">12.5. Conclusiones Machine Learning No Supervisado</a></li>
 </ul>
             </nav>
         </div>
@@ -545,6 +546,7 @@ A continuación detallamos el procedimiento realizado para subir la información
 <p>Mediante el comando “prefect run” o mediante la interfaz gráfica de usuario de Prefect, se da la realización de la ejecución del flujo.</p>
 </li>
 </ol>
+<p>Con este procedimiento lgoramos cargar los datos en DigitalOcean con PREFECT.</p>
 </section>
 </section>
 <section id="transformacion-de-la-informacion">
@@ -582,8 +584,12 @@ El modelo predictivo desarrollado tiene una aplicación práctica significativa,
 El proceso de machine learning es iterativo, y aunque los resultados obtenidos son prometedores, existe la posibilidad de mejorar continuamente el modelo mediante la incorporación de nuevos datos y el ajuste de técnicas avanzadas de machine learning.</p></li>
 </ol>
 </section>
-<section id="conclusiones-de-machine-learning">
-<h2><span class="section-number">12.4. </span>Conclusiones de Machine Learning<a class="headerlink" href="#conclusiones-de-machine-learning" title="Link to this heading">#</a></h2>
+<section id="conclusiones-de-machine-learning-supervisado">
+<h2><span class="section-number">12.4. </span>Conclusiones de Machine Learning Supervisado<a class="headerlink" href="#conclusiones-de-machine-learning-supervisado" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Logramos construir un modelo de regresión para la predicción del precio de la energia en la bolsa nacional a partir de sus variables operativas usando XGBoost.</p></li>
+<li><p>Logramos identificar las variables que mas aportan al precio a partir de este modelo.</p></li>
+</ul>
 <p><img alt="image.png" src="../../_images/output.png" /></p>
 <p>A partir de este gráfico, podemos concluir que las variables que más influyen en la variabilidad del precio son, en orden ascendente:</p>
 <ol class="arabic simple">
@@ -592,6 +598,13 @@ El proceso de machine learning es iterativo, y aunque los resultados obtenidos s
 <li><p><code class="docutils literal notranslate"><span class="pre">disponibilidad_real_daily</span></code></p></li>
 </ol>
 <p>Inicialmente, se esperaba que el <code class="docutils literal notranslate"><span class="pre">consumo_combustible_daily</span></code> fuera la variable que más impactara en el precio. Sin embargo, debido a que la matriz energética colombiana depende en un 70% de la generación hidráulica, el volumen útil de los embalses se convierte en la variable que más influye en los precios.</p>
+</section>
+<section id="conclusiones-machine-learning-no-supervisado">
+<h2><span class="section-number">12.5. </span>Conclusiones Machine Learning No Supervisado<a class="headerlink" href="#conclusiones-machine-learning-no-supervisado" title="Link to this heading">#</a></h2>
+<p>Usando la tecnica de Analisis de Componentes Principales, logramos reducir la dimensionalidad de los datos encontrando las zonas de operacion con precio mas alto.</p>
+<p><img alt="image.png" src="../../_images/output_PCA.png" /></p>
+<p><img alt="image.png" src="../../_images/PCA_3D.png" /></p>
+<p>Identificando 3 clusters.</p>
 </section>
 </section>
 
@@ -666,7 +679,8 @@ El proceso de machine learning es iterativo, y aunque los resultados obtenidos s
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-de-la-informacion">12.2. Transformación de la información</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-la-informacion">12.3. Carga de la información</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning">12.4. Conclusiones de Machine Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-de-machine-learning-supervisado">12.4. Conclusiones de Machine Learning Supervisado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-machine-learning-no-supervisado">12.5. Conclusiones Machine Learning No Supervisado</a></li>
 </ul>
   </nav></div>
 

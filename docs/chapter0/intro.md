@@ -1,7 +1,8 @@
 #  Análisis y Modelado Sistema Eléctrico Colombiano en el Periodo de 2010-2024
 
-```{index} Título
-```
+Trabajo Final Asignatura: Herramientas de Big Data
+Profesor: Rodolfo Meza
+
 ### **Objetivo**
 ------
 Comprender el comportamiento general del precio y la demanda del sistema interconectado nacional.
@@ -13,13 +14,7 @@ Encontrar la influencia del consumo de combustible en el precio de la eléctrici
 ### **Integrantes**
 ------
 
-Julián Andrés Santos Méndez
-
-Juan Felipe Sepulveda Mantilla
-
-Julian Obando Scarpetta
-
-Luz Edilsa Ortiz López
+![image.png](./img/integrantes.png)
 
 ### **Repositorios**
 ----
