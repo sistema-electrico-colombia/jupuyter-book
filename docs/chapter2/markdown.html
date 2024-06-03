@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ficheros Markdown (.md) &#8212; Presentación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=7f8ff830"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-52617120-7');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/chapter2/markdown';</script>
+    <link rel="canonical" href="https://publiconsulting.com/docs/chapter2/markdown.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../chapter0/root.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Presentación - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Presentación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Inicio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Inicio.html">1. <strong>Presentación</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter0/Contexto.html">2. <strong>Contexto</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Flujo de trabajo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/DiagramaProcesoETL.html">3. Detalle del procedimiento Extracción - Transformación - Carga (ETL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/extraccion_datos_api_xm.html">4. <strong>Extracción de datos de la REST API de XM S.A. E.S.P.</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/CargaBaseDatosDigitalOcean.html">14. Proceso Carga base de datos en nube DigitalOcean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/transformaciones_analitica.html">15. <strong>Transformación de Datos</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/exploratory_data_analysis.html">17. <strong>Analisis Exploratorio de Datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/ProcesoAlmacenamientoAWS.html">18. Carga de información base de datos AWS.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/machine_learning.html">20. Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Creaci%C3%B3n_dashboard.html">21. **Creación de dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter1/Mostrar_dashboard.html">22. Dashboard</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conclusiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Conclusiones.html">23. <strong>Conclusiones</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bibliografia.html">24. <strong>Referencias</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Jero2760/jupyter-book-ejemplo/master?urlpath=tree/docs/docs/chapter2/markdown.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Jero2760/jupyter-book-ejemplo/blob/master/docs/docs/chapter2/markdown.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/edit/master/docs/docs/chapter2/markdown.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jero2760/jupyter-book-ejemplo/issues/new?title=Issue%20on%20page%20%2Fdocs/chapter2/markdown.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/chapter2/markdown.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/docs/chapter2/markdown.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ficheros Markdown (.md)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-myst">¿Qué es MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-ecuaciones-matematicas">Escribir Ecuaciones matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-roles-y-directivas">¿Qué son roles y directivas?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-directivas">Uso de directivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-roles">Uso de roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-referencias-bibliograficas">Uso de referencias bibliográficas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-de-codigo-en-un-fichero-markdown">Ejecución de código en un fichero markdown</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ficheros-markdown-md">
+<span id="index-2"></span><span id="index-1"></span><span id="index-0"></span><h1>Ficheros Markdown (.md)<a class="headerlink" href="#ficheros-markdown-md" title="Link to this heading">#</a></h1>
+<p>Tanto si el contenido del libro se escribe en Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) como en
+estándar markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), utilizamos <strong>MyST Markdown</strong>.</p>
+<section id="que-es-myst">
+<h2>¿Qué es MyST?<a class="headerlink" href="#que-es-myst" title="Link to this heading">#</a></h2>
+<p>MyST significa “Markedly Structured Text”. Se trata de una ligera variante de un tipo de
+markdown llamado “CommonMark”, con algunas extensiones que permiten añadir <strong>roles</strong> y <strong>directivas</strong>
+en el ecosistema de documentación Sphinx.</p>
+</section>
+<section id="escribir-ecuaciones-matematicas">
+<h2>Escribir Ecuaciones matemáticas<a class="headerlink" href="#escribir-ecuaciones-matematicas" title="Link to this heading">#</a></h2>
+<p>Al activar la extensión amsmath en _config.yml, podemos escribir expresiones matemáticas como:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*}
+a_{11}&amp; =b_{11}&amp;
+  a_{12}&amp; =b_{12}\\
+a_{21}&amp; =b_{21}&amp;
+  a_{22}&amp; =b_{22}+c_{22}\\
+\end{gather*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{gather*}
+\nabla \times \vec{e}+\frac{\partial \vec{b}}{\partial t}&amp;=0 \\
+\nabla \times \vec{h}-\vec{j}&amp;=\vec{s}\_{e}
+\end{gather*}\]</div>
+</section>
+<section id="que-son-roles-y-directivas">
+<h2>¿Qué son roles y directivas?<a class="headerlink" href="#que-son-roles-y-directivas" title="Link to this heading">#</a></h2>
+<p>Roles y directivas son dos potentes herramientas de Jupyter Book similares a las funciones, pero escritas en un lenguaje de markup. Ambas buscan un propósito similar, pero los <strong>roles se escriben en una sola línea</strong> mientras que las <strong>directivas ocupan varias líneas</strong>.</p>
+<section id="uso-de-directivas">
+<h3>Uso de directivas<a class="headerlink" href="#uso-de-directivas" title="Link to this heading">#</a></h3>
+<p>La forma más simple de insertar una directiva en el contenido de un libro es la siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{midirectiva}
+Contenido de mi directiva
+```
+</pre></div>
+</div>
+<p>Esto sólo funciona si existiera una directiva de nombre <code class="docutils literal notranslate"><span class="pre">midirectiva</span></code>
+(que no existe, por supuesto). Existen muchas directivas predefinidas asociadas con
+Jupyter Book. Por ejemplo, para insertar una caja con una nota, se puede hacer con la directiva siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{note}
+Aquí hay una nota
+```
+</pre></div>
+</div>
+<p>Que se visualiza como:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aquí hay una nota</p>
+</div>
+<p>cuando se genera/actualiza el lbro con el comando <code class="docutils literal notranslate"><span class="pre">jupyterbook</span> <span class="pre">build</span></code>.</p>
+<p>Para más información sobre directivas, ver la
+<a class="reference external" href="https://myst-parser.readthedocs.io/">documentación sobre MyST</a>.</p>
+</section>
+<section id="uso-de-roles">
+<h3>Uso de roles<a class="headerlink" href="#uso-de-roles" title="Link to this heading">#</a></h3>
+<p>Los roles son similares a las directivas, pero se escriben en una sola línea. Para insertar un rol en un libro se hace siguiendo este formato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Algún texto {rolename}`Este es mi texto!`
+</pre></div>
+</div>
+<p>Como con las directivas, los roles sólo funcionan si el nombre <code class="docutils literal notranslate"><span class="pre">rolename</span></code> es válido. Por ejemplo, un nombre válido es <code class="docutils literal notranslate"><span class="pre">doc</span></code> y se usa para hacer referencia a otra página del libro. Así, puede utilizarse el encaminamiento relativo a la página de introducción, mediante la sintaxis <code class="docutils literal notranslate"><span class="pre">{doc}`../chapter0/intro`</span></code> que se visualizará como este texto con enlace a dicha página: <a class="reference internal" href="../chapter0/intro.html"><span class="doc">Presentación</span></a>.</p>
+<p>Para más información sobre roles, ver la
+<a class="reference external" href="https://myst-parser.readthedocs.io/">documentación sobre MyST</a>.</p>
+</section>
+<section id="uso-de-referencias-bibliograficas">
+<h3>Uso de referencias bibliográficas<a class="headerlink" href="#uso-de-referencias-bibliograficas" title="Link to this heading">#</a></h3>
+<p>Se pueden citar referencias que estén almacenadas en un fichero <code class="docutils literal notranslate"><span class="pre">bibtex</span></code>. Por ejemplo,
+la sintaxis siguiente: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code>se visualizará como: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">Holdgraf <em>et al.</em>, 2014</a>]</span>.</p>
+<p>Para insertar la bibliografía se utiliza la directiva <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code>. Esta directiva debe ser utilizada para todos los roles <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> para su correcta visualización.
+En el libro ejemplo las referencias están almacenadas en el fichero <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> y la bibliografía se incluye con:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{bibliography} references.bib
+```
+</pre></div>
+</div>
+<p>Que resulta en la siguiente visualización:</p>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HdHPK14</a><span class="fn-bracket">]</span></span>
+<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ejecucion-de-codigo-en-un-fichero-markdown">
+<h3>Ejecución de código en un fichero markdown<a class="headerlink" href="#ejecucion-de-codigo-en-un-fichero-markdown" title="Link to this heading">#</a></h3>
+<p>Jupyter Book usa <em>jupytext</em> para ejecutar código de programación en ficheros markdown. Para más información, ver la <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/formats.html">documentación Jupytext</a></p>
+<p>En primer lugar, se añaden Jupytext metadata al fichero markdown que contenga el código que queramos ajecutar. Por ejemplo, para añadir Jupytext metadata a esta página <code class="docutils literal notranslate"><span class="pre">markdown.md</span></code>, utilizando un kernel python3, hay que ejecutar el comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">docs</span><span class="o">/</span><span class="n">chapter2</span><span class="o">/</span><span class="n">markdown</span><span class="o">.</span><span class="n">md</span> <span class="o">--</span><span class="n">kernel</span> <span class="n">python3</span>
+
+</pre></div>
+</div>
+<p>que genera el header siguiente en el fichero <code class="docutils literal notranslate"><span class="pre">markdown.md</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupytext:
+<span class="w">  </span>cell_metadata_filter:<span class="w"> </span>-all
+<span class="w">  </span>formats:<span class="w"> </span>md:myst
+<span class="w">  </span>text_representation:
+<span class="w">    </span>extension:<span class="w"> </span>.md
+<span class="w">    </span>format_name:<span class="w"> </span>myst
+<span class="w">    </span>format_version:<span class="w"> </span><span class="m">0</span>.12
+<span class="w">    </span>jupytext_version:<span class="w"> </span><span class="m">1</span>.6.0
+kernelspec:
+<span class="w">  </span>display_name:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>language:<span class="w"> </span>python
+<span class="w">  </span>name:<span class="w"> </span>python3
+</pre></div>
+</div>
+<p>A continuación se añade la directiva <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> con el código que queramos ejecutar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
+a = &quot;Este es un texto&quot;
+b = &quot;en código Python&quot;
+print(f&quot;{a} {b}&quot;)
+```
+</pre></div>
+</div>
+<p>Cuando se genera el libro con el comando <code class="docutils literal notranslate"><span class="pre">jupyterbook</span> <span class="pre">build</span></code>, el contenido del bloque <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> se ejecutará en el kernel Jupyter (en este caso python3) y el output se visualizará junto con el resto del libro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Este es un texto&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;en código Python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para más información sobre ejecución de código en ficheros markdown, ver la <a class="reference external" href="https://myst-nb.readthedocs.io/en/latest/use/markdown.html">documentación MyST-NB</a>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Jero2760/jupyter-book-ejemplo",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-myst">¿Qué es MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escribir-ecuaciones-matematicas">Escribir Ecuaciones matemáticas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son-roles-y-directivas">¿Qué son roles y directivas?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-directivas">Uso de directivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-roles">Uso de roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-referencias-bibliograficas">Uso de referencias bibliográficas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-de-codigo-en-un-fichero-markdown">Ejecución de código en un fichero markdown</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Julián Andrés Santos Méndez, Juan Felipe Sepulveda Mantilla, Julian Obando Scarpetta, Luz Edilsa Ortiz López.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright © 2024 BigData. Todos los derechos reservados..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
