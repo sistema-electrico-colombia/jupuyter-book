@@ -1,4 +1,4 @@
-#  Análisis y Modelado Sistema Eléctrico Colombiano en el Periodo de 2010-2024
+#  Análisis y Modelado del Sistema Eléctrico Colombiano en el Periodo de 2010-2024
 
 Trabajo Final Asignatura: Herramientas de Big Data
 Profesor: Rodolfo Meza
@@ -21,12 +21,6 @@ https://github.com/orgs/sistema-electrico-colombia/repositories
 
 
 El dashboard de este proyecto se encuentra en este link: https://electrico-colombia.streamlit.app
-
-
-### **Pregunta de investigación**
-------
-
-¿Cómo ha evolucionado el sector eléctrico en Colombia y cuál es el impacto de las energías renovables en su desarrollo futuro con relación al precio y la demanda?
 
 ### **Introducción**
 ------
