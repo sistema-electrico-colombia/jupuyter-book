@@ -1,7 +1,8 @@
 #  Análisis y Modelado del Sistema Eléctrico Colombiano en el Periodo de 2010-2024
 
-Trabajo Final Asignatura: Herramientas de Big Data
-Profesor: Rodolfo Meza
+- Trabajo Final Asignatura: Herramientas de Big Data
+- Maestría en Analítica Aplicada
+- Profesor: Rodolfo Meza
 
 ### Objetivo General
 -----
